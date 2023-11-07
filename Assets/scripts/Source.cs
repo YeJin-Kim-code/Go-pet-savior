@@ -105,6 +105,11 @@ public partial class DB_petsSkill : BGEntity
 		get => _useMp[Index];
 		set => _useMp[Index] = value;
 	}
+	public System.String skillContent
+	{
+		get => _skillContent[Index];
+		set => _skillContent[Index] = value;
+	}
 	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
 	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5664165088027681939UL, 12994688545427843258UL), () => _ufle12jhs77_name = null));
 	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_skillName;
@@ -115,6 +120,8 @@ public partial class DB_petsSkill : BGEntity
 	public static BansheeGz.BGDatabase.BGFieldInt _highDamage => _ufle12jhs77_highDamage ?? (_ufle12jhs77_highDamage = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(5207148116815162877UL, 16783685417789504696UL), () => _ufle12jhs77_highDamage = null));
 	private static BansheeGz.BGDatabase.BGFieldInt _ufle12jhs77_useMp;
 	public static BansheeGz.BGDatabase.BGFieldInt _useMp => _ufle12jhs77_useMp ?? (_ufle12jhs77_useMp = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(4744160979433584149UL, 149813366810198429UL), () => _ufle12jhs77_useMp = null));
+	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_skillContent;
+	public static BansheeGz.BGDatabase.BGFieldString _skillContent => _ufle12jhs77_skillContent ?? (_ufle12jhs77_skillContent = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldString>(MetaDefault, new BGId(4860535205846477015UL, 17895207831199564697UL), () => _ufle12jhs77_skillContent = null));
 	private static readonly DB_StageInfo.Factory _factory0_PFS = new DB_StageInfo.Factory();
 	private static readonly DB_petsSkill.Factory _factory1_PFS = new DB_petsSkill.Factory();
 	private static readonly DB_enemySkill.Factory _factory2_PFS = new DB_enemySkill.Factory();
@@ -227,6 +234,10 @@ public partial class DB_petInfo : BGEntity
 		get => _mp[Index];
 		set => _mp[Index] = value;
 	}
+	public UnityEngine.Sprite petFaceImage => _petFaceImage[Index];
+	public UnityEngine.Sprite skillOne => _skillOne[Index];
+	public UnityEngine.Sprite skillTwo => _skillTwo[Index];
+	public UnityEngine.Sprite skillThree => _skillThree[Index];
 	private static BansheeGz.BGDatabase.BGFieldEntityName _ufle12jhs77_name;
 	public static BansheeGz.BGDatabase.BGFieldEntityName _name => _ufle12jhs77_name ?? (_ufle12jhs77_name = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldEntityName>(MetaDefault, new BGId(5610739267421664898UL, 3996294852943207072UL), () => _ufle12jhs77_name = null));
 	private static BansheeGz.BGDatabase.BGFieldString _ufle12jhs77_animalName;
@@ -235,6 +246,14 @@ public partial class DB_petInfo : BGEntity
 	public static BansheeGz.BGDatabase.BGFieldInt _hp => _ufle12jhs77_hp ?? (_ufle12jhs77_hp = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(5304442055323020872UL, 1360961264623817374UL), () => _ufle12jhs77_hp = null));
 	private static BansheeGz.BGDatabase.BGFieldInt _ufle12jhs77_mp;
 	public static BansheeGz.BGDatabase.BGFieldInt _mp => _ufle12jhs77_mp ?? (_ufle12jhs77_mp = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldInt>(MetaDefault, new BGId(5402560827354804245UL, 14758141622572376456UL), () => _ufle12jhs77_mp = null));
+	private static BansheeGz.BGDatabase.BGFieldUnitySprite _ufle12jhs77_petFaceImage;
+	public static BansheeGz.BGDatabase.BGFieldUnitySprite _petFaceImage => _ufle12jhs77_petFaceImage ?? (_ufle12jhs77_petFaceImage = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldUnitySprite>(MetaDefault, new BGId(4943749056997808664UL, 1623970025113599912UL), () => _ufle12jhs77_petFaceImage = null));
+	private static BansheeGz.BGDatabase.BGFieldUnitySprite _ufle12jhs77_skillOne;
+	public static BansheeGz.BGDatabase.BGFieldUnitySprite _skillOne => _ufle12jhs77_skillOne ?? (_ufle12jhs77_skillOne = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldUnitySprite>(MetaDefault, new BGId(4810107794027414280UL, 17482864369723719327UL), () => _ufle12jhs77_skillOne = null));
+	private static BansheeGz.BGDatabase.BGFieldUnitySprite _ufle12jhs77_skillTwo;
+	public static BansheeGz.BGDatabase.BGFieldUnitySprite _skillTwo => _ufle12jhs77_skillTwo ?? (_ufle12jhs77_skillTwo = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldUnitySprite>(MetaDefault, new BGId(5663328444265580033UL, 9667470489501611444UL), () => _ufle12jhs77_skillTwo = null));
+	private static BansheeGz.BGDatabase.BGFieldUnitySprite _ufle12jhs77_skillThree;
+	public static BansheeGz.BGDatabase.BGFieldUnitySprite _skillThree => _ufle12jhs77_skillThree ?? (_ufle12jhs77_skillThree = BGCodeGenUtils.GetField<BansheeGz.BGDatabase.BGFieldUnitySprite>(MetaDefault, new BGId(5548289512861789151UL, 9595422688170091156UL), () => _ufle12jhs77_skillThree = null));
 	private static readonly DB_StageInfo.Factory _factory0_PFS = new DB_StageInfo.Factory();
 	private static readonly DB_petsSkill.Factory _factory1_PFS = new DB_petsSkill.Factory();
 	private static readonly DB_enemySkill.Factory _factory2_PFS = new DB_enemySkill.Factory();
