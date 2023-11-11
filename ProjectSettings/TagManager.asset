@@ -8,10 +8,10 @@ TagManager:
   - dog
   - turtle
   - duck
-  - EnemyBug
   - EnemyNormal
   - EnemySmall
   - EnemyHeal
+  - EnemyBig
   layers:
   - Default
   - TransparentFX

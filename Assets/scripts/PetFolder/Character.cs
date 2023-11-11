@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     private Camera mainCamera;
     public DataPanelConnect m_dataPanel;
     public int charIndex = 0; // 기본값
+    public int targetEnemyIndex =  -1;
     public int maxHP;
     public int currentHP;
     public int maxMP;
@@ -23,10 +24,10 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        ClickCheck();
+        ClickCheckEnemy();
     }
 
-    public void ClickCheck()
+    public void ClickCheckEnemy()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -39,25 +40,28 @@ public class Character : MonoBehaviour
 
                 switch (objectTag)
                 {
-                    case "cat":
-                        charIndex = 0;
+                    case "EnemyBig":
+                        targetEnemyIndex = 0;
+                        Debug.Log("this enemy is 0");
                         break;
-                    case "duck":
-                        charIndex = 1;
+                    case "EnemyNormal":
+                        targetEnemyIndex = 1;
+                        Debug.Log("this enemy is 1");
                         break;
-                    case "turtle":
-                        charIndex = 2;
+                    case "EnemySmall":
+                        targetEnemyIndex = 2;
+                        Debug.Log("this enemy is 2");
                         break;
-                    case "dog":
-                        charIndex = 3;
+                    case "EnemyHeal":
+                        targetEnemyIndex = 3;
+                        Debug.Log("this enemy is 3");
                         break;
                 }
-                m_dataPanel.DisplayCharInfo(charIndex);
             }
         }
     }
 
-    public void SetPetChar()//이 charindex를 리스트의 넘버로 mp,hp정보 저장
+    public void SetPetChar()//이 charindex를 리스트의 넘버로 mp,hp정보 저장, 초기화
     {
         string objectTag = this.gameObject.tag;
         switch (objectTag)
@@ -77,7 +81,7 @@ public class Character : MonoBehaviour
         }
         this.maxHP = DB_petInfo.GetEntity(charIndex).hp;
         this.currentHP = DB_petInfo.GetEntity(charIndex).hp;
-        this.MaxMP = DB_petInfo.GetEntity(charIndex).mp;
+        this.maxMP = DB_petInfo.GetEntity(charIndex).mp;
         this.currentMP = DB_petInfo.GetEntity(charIndex).mp;
     }
 
@@ -103,32 +107,6 @@ public class Character : MonoBehaviour
         }
         this.maxHP = DB_enemyInfo.GetEntity(charIndex).hp;
         this.currentHP = DB_enemyInfo.GetEntity(charIndex).hp;
-    }
-
-
-    //수정해야
-    public int MaxHP
-    {
-        get { return maxHP; }
-        set { maxHP = value; }
-    }
-
-    public int CurrentHP
-    {
-        get { return currentHP; }
-        set { currentHP = Mathf.Clamp(value, 0, maxHP); }
-    }
-
-    public int MaxMP
-    {
-        get { return maxMP; }
-        set { maxMP = value; }
-    }
-
-    public int CurrentMP
-    {
-        get { return currentMP; }
-        set { currentMP = Mathf.Clamp(value, 0, maxMP); }
     }
 
 }

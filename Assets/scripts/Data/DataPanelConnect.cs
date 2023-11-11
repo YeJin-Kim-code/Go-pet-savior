@@ -20,6 +20,7 @@ public class DataPanelConnect : MonoBehaviour
 
     public int charIndex;//일단 지정 추후 수정
     public int skillCount = 3;
+    public int skillIndex = -1;
     private void Start()
     {
 
@@ -45,7 +46,7 @@ public class DataPanelConnect : MonoBehaviour
 
     public void DisplayCharSkillInfo(int _skillIndex)//스킬인덱스와 스킬조절바 수를 매개변수로 int _skillControlBar
     {
-        int skillIndex = _skillIndex + charIndex * skillCount;
+        skillIndex = _skillIndex + charIndex * skillCount;
         //스킬묘사
         petSkillDescript.text = DB_petsSkill.GetEntity(skillIndex).skillContent;
         //스킬에따른 데미지
