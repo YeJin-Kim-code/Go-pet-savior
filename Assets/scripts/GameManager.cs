@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public TextMeshProUGUI TurnText;
 
     public Character character;
     public List<Character> playerCharacters;
@@ -79,7 +82,7 @@ public class GameManager : MonoBehaviour
         dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
         character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
         currentPlayerIndex += 1; //현재 플레이어 턴 설정
-        currentTurn += 1;
+        ChangeTurnText();
         EnemyTurn = true;
         Debug.Log("currnetPlayerIndex : " + currentPlayerIndex);
         Debug.Log("currnetTurn : " + currentTurn);
@@ -105,7 +108,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(animationTime);
         currentEnemyIndex += 1;
-        currentTurn += 1;
+        ChangeTurnText();
         Debug.Log("currnetTurn : " + currentTurn);
         PlayerTurn = true;
         if (currentEnemyIndex >= 4)
@@ -117,5 +120,11 @@ public class GameManager : MonoBehaviour
     public void GameEndCheck()
     {
 
+    }
+    
+    public void ChangeTurnText()//턴 text 연결
+    {
+        currentTurn += 1;
+        TurnText.text = currentTurn.ToString();
     }
 }

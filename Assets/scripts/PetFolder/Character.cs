@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    private Camera mainCamera;
+    private Camera _mainCamera;
+    [SerializeField]
     public DataPanelConnect m_dataPanel;
     public int charIndex = 0; // 기본값
     public int targetEnemyIndex =  -1;
@@ -14,9 +15,12 @@ public class Character : MonoBehaviour
     public int maxMP;
     public int currentMP;
 
+    public GameObject targetCheckCIrcle;
+    public GameObject newPrefabInstance;
+
     private void Start()
     {
-        mainCamera = Camera.main;
+        _mainCamera = Camera.main;
         m_dataPanel = GameObject.FindObjectOfType<DataPanelConnect>();
         SetPetChar();
         SetEnemyChar();
@@ -35,6 +39,7 @@ public class Character : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
             if (hit.collider != null)
             {
+                //Destroy(newPrefabInstance);//표시 오브젝트 삭제
 
                 string objectTag = hit.collider.gameObject.tag;
 
@@ -56,7 +61,15 @@ public class Character : MonoBehaviour
                         targetEnemyIndex = 3;
                         Debug.Log("this enemy is 3");
                         break;
+
+
                 }
+                // 현재 스크립트 오브젝트의 위치와 회전을 가져옴
+                //Vector3 currentPosition = this.transform.position;
+                //Quaternion currentRotation = this.transform.rotation;
+
+                // 프리팹을 현재 스크립트 오브젝트의 위치에 생성
+                //newPrefabInstance = Instantiate(targetCheckCIrcle, currentPosition, currentRotation);
             }
         }
     }
