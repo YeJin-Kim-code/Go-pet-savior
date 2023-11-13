@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
 {
@@ -58,23 +59,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerAttack(int skillIndex, int targetEnemy)
+    IEnumerator PlayerAttack(int skillIndex, int targetEnemy)//플레이어 turn
     {
         //update문 재실행 차단
         PlayerTurn = false;
 
-
         //애니메이션 및 기능 추가
-        Debug.Log("skillIndex : " + skillIndex);
-        Debug.Log("targetEnemy : " + targetEnemy);
 
         //일단 지금은 큰 데미지 기준
         enemyCharacters[targetEnemy].currentHP -= DB_petsSkill.GetEntity(skillIndex).highDamage;//에너미 피격
-        Debug.Log("targetenemy currnetHp : " + enemyCharacters[character.targetEnemyIndex].currentHP);
-
-
         playerCharacters[currentPlayerIndex].currentMP -= DB_petsSkill.GetEntity(skillIndex).useMp;//mp 차감
-        Debug.Log("playerChar currentmp : " + playerCharacters[currentPlayerIndex].currentMP);
 
         yield return new WaitForSeconds(animationTime);
 
@@ -82,11 +76,11 @@ public class GameManager : MonoBehaviour
         dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
         character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
         currentPlayerIndex += 1; //현재 플레이어 턴 설정
-        ChangeTurnText();
+        character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//어떤 캐릭터선택했는지 체크
+        ChangeTurnText();//지금이 몇번째 turn 인지 표시
         EnemyTurn = true;
-        Debug.Log("currnetPlayerIndex : " + currentPlayerIndex);
-        Debug.Log("currnetTurn : " + currentTurn);
-        if(currentPlayerIndex >=4)
+        DeadCheck(enemyCharacters[targetEnemy].currentHP, enemyCharacters[targetEnemy]);//죽음감지
+        if (currentPlayerIndex >=4)
         {
             currentPlayerIndex = 0;
         }
@@ -98,33 +92,77 @@ public class GameManager : MonoBehaviour
 
         EnemyTurn = false;
         int randomValue = Random.Range(0, 4);
-
-        Debug.Log("attack charnum : " + randomValue);
-
+        character.targetCheckCIrcle.transform.position = playerCharacters[randomValue].transform.position;//선택 표시하기
         playerCharacters[randomValue].currentHP -= DB_enemySkill.GetEntity(currentEnemyIndex).highDamage;
-        Debug.Log(playerCharacters[randomValue].name);
-        Debug.Log(playerCharacters[randomValue].currentHP);
-
 
         yield return new WaitForSeconds(animationTime);
         currentEnemyIndex += 1;
+        character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;
         ChangeTurnText();
-        Debug.Log("currnetTurn : " + currentTurn);
         PlayerTurn = true;
+        DeadCheck(playerCharacters[randomValue].currentHP, playerCharacters[randomValue]);
         if (currentEnemyIndex >= 4)
         {
             currentEnemyIndex = 0;
         }
     }
 
-    public void GameEndCheck()
+    bool AreAllCharactersDead()
     {
+        // 모든 캐릭터의 HP가 0 이하인지 확인
+        foreach (Character playerCharacter in playerCharacters)
+        {
+            if (playerCharacter.currentHP > 0)
+            {
+                // 아직 생존한 캐릭터가 있다면 false 반환
+                return false;
+            }
+        }
 
+        // 모든 캐릭터가 죽었다면 true 반환
+        return true;
     }
-    
+
     public void ChangeTurnText()//턴 text 연결
     {
         currentTurn += 1;
         TurnText.text = currentTurn.ToString();
+    }
+
+    private static GameManager instance = null;
+
+    void Awake()
+    {
+        if (null == instance)
+        {
+            instance = this;
+
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (null == instance)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
+
+    public void DeadCheck(int hp, Character targetObject)
+    {
+        if (hp <= 0)
+        {
+            Renderer renderer = targetObject.GetComponent<Renderer>();
+            renderer.material.color = Color.black;
+        }
     }
 }

@@ -18,7 +18,6 @@ public class DataPanelConnect : MonoBehaviour
     public TextMeshProUGUI skillUseHpText;
     public TextMeshProUGUI skillUseMpText;
 
-    public GameManager gameManager;
 
     public int charIndex;//일단 지정 추후 수정
     public int skillCount = 3;
@@ -35,9 +34,9 @@ public class DataPanelConnect : MonoBehaviour
         //캐릭터이름 
         petName.text = DB_petInfo.GetEntity(_charIndex).animalName;
         //캐릭터hp
-        petHp.text = "HP : " + gameManager.playerCharacters[gameManager.currentPlayerIndex].currentHP + "/" + DB_petInfo.GetEntity(_charIndex).hp.ToString();//추후 게임메니져에서 currnetHp가져오기 계산은 각 캐릭터 스크립트에서
+        petHp.text = "HP : " + GameManager.Instance.playerCharacters[GameManager.Instance.currentPlayerIndex].currentHP + "/" + DB_petInfo.GetEntity(_charIndex).hp.ToString();//추후 게임메니져에서 currnetHp가져오기 계산은 각 캐릭터 스크립트에서
         //캐릭터mp
-        petMp.text = "MP : "+ gameManager.playerCharacters[gameManager.currentPlayerIndex].currentMP + "/" + DB_petInfo.GetEntity(_charIndex).mp.ToString();//추후 게임메니져에서 currnetmp가져오기 게임매니져에서 
+        petMp.text = "MP : "+ GameManager.Instance.playerCharacters[GameManager.Instance.currentPlayerIndex].currentMP + "/" + DB_petInfo.GetEntity(_charIndex).mp.ToString();//추후 게임메니져에서 currnetmp가져오기 게임매니져에서 
         //캐릭터 스킬1
         petSkill1.image.sprite = DB_petInfo.GetEntity(_charIndex).skillOne;
         //캐릭터 스킬2

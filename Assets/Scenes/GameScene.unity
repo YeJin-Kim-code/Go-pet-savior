@@ -359,6 +359,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &119401863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3627703672058772637, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+  m_PrefabInstance: {fileID: 1015391962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148754159
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,18 +562,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 222865203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3247ba9185f9e76478c44e2848c21c1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
   charIndex: 0
-  targetEnemyIndex: 0
+  targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
   targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &245454825
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,8 +924,8 @@ GameObject:
   m_Component:
   - component: {fileID: 537277008}
   - component: {fileID: 537277009}
-  - component: {fileID: 537277010}
   - component: {fileID: 537277011}
+  - component: {fileID: 537277012}
   m_Layer: 0
   m_Name: EnemyHeal
   m_TagString: EnemyHeal
@@ -996,27 +1000,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &537277010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537277007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d518286e3e9c74cb98031e7ae9772d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
-  charIndex: 0
-  targetEnemyIndex: 0
-  maxHP: 0
-  currentHP: 0
-  maxMP: 0
-  currentMP: 0
-  targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
 --- !u!61 &537277011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1062,6 +1045,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &537277012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537277007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charIndex: 0
+  targetEnemyIndex: -1
+  maxHP: 0
+  currentHP: 0
+  maxMP: 0
+  currentMP: 0
+  targetCheckCIrcle: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &563667688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,8 +1104,8 @@ MonoBehaviour:
   enemyCharacters:
   - {fileID: 976191383}
   - {fileID: 910016661}
-  - {fileID: 888837136}
-  - {fileID: 537277010}
+  - {fileID: 888837138}
+  - {fileID: 537277012}
   currentPlayerIndex: 0
   currentEnemyIndex: 0
   currentTurn: 1
@@ -1421,18 +1424,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 620791592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae221200bb748354f8f253e4ea22a448, type: 3}
+  m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
   charIndex: 0
-  targetEnemyIndex: 0
+  targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
   targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &649702858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,8 +1871,8 @@ GameObject:
   m_Component:
   - component: {fileID: 888837134}
   - component: {fileID: 888837135}
-  - component: {fileID: 888837136}
   - component: {fileID: 888837137}
+  - component: {fileID: 888837138}
   m_Layer: 0
   m_Name: EnemySmall
   m_TagString: EnemySmall
@@ -1945,27 +1947,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &888837136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888837133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d518286e3e9c74cb98031e7ae9772d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
-  charIndex: 0
-  targetEnemyIndex: 0
-  maxHP: 0
-  currentHP: 0
-  maxMP: 0
-  currentMP: 0
-  targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
 --- !u!61 &888837137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2011,6 +1992,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &888837138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888837133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charIndex: 0
+  targetEnemyIndex: -1
+  maxHP: 0
+  currentHP: 0
+  maxMP: 0
+  currentMP: 0
+  targetCheckCIrcle: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &910016656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,8 +2023,8 @@ GameObject:
   - component: {fileID: 910016657}
   - component: {fileID: 910016660}
   - component: {fileID: 910016659}
-  - component: {fileID: 910016661}
   - component: {fileID: 910016658}
+  - component: {fileID: 910016661}
   m_Layer: 0
   m_Name: enemyNormal
   m_TagString: EnemyNormal
@@ -2173,18 +2174,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 910016656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d518286e3e9c74cb98031e7ae9772d, type: 3}
+  m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
   charIndex: 0
-  targetEnemyIndex: 0
+  targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
   targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &976191378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,18 +2347,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 976191378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d518286e3e9c74cb98031e7ae9772d, type: 3}
+  m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
   charIndex: 0
-  targetEnemyIndex: 0
+  targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
   targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &999730820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,6 +2626,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012470297}
   m_CullTransparentMesh: 1
+--- !u!1001 &1015391962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3627703672058772637, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_Name
+      value: TurnCheckCIrcle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051568904550491050, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
 --- !u!1 &1132029912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,7 +2992,6 @@ MonoBehaviour:
   SkillDamageText: {fileID: 1012470299}
   skillUseHpText: {fileID: 649702860}
   skillUseMpText: {fileID: 1459203558}
-  gameManager: {fileID: 563667689}
   charIndex: 0
   skillCount: 3
   skillIndex: -1
@@ -3117,18 +3172,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1330447258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6994ddefd95d8004686bf68e549d13ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
   charIndex: 0
-  targetEnemyIndex: 0
+  targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
   targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &1353397373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,18 +3616,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1405340738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc9b21f70311ba46ae6b6d7c9e58fd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 0}
   charIndex: 0
-  targetEnemyIndex: 0
+  targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
   targetCheckCIrcle: {fileID: 0}
-  newPrefabInstance: {fileID: 0}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &1459203556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,15 +4073,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d518286e3e9c74cb98031e7ae9772d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dataPanel: {fileID: 1236187198}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
   currentHP: 0
   maxMP: 0
   currentMP: 0
-  targetCheckCIrcle: {fileID: 3627703672058772637, guid: e0167d7b214aa334fa286dbc6a2cca9b, type: 3}
-  newPrefabInstance: {fileID: 0}
+  targetCheckCIrcle: {fileID: 119401863}
+  checkCircleDefaultPosition: {x: 10, y: 10, z: 10}
 --- !u!1 &1549027093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,8 +4442,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1405340741}
-  - {fileID: 620791595}
   - {fileID: 222865206}
+  - {fileID: 620791595}
   - {fileID: 1330447261}
   - {fileID: 976191379}
   - {fileID: 910016657}
@@ -4543,3 +4595,4 @@ SceneRoots:
   - {fileID: 1516040139}
   - {fileID: 1236187199}
   - {fileID: 563667690}
+  - {fileID: 1015391962}
