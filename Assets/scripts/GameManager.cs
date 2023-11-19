@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameManager : MonoBehaviour
 {
 
-    public TextMeshProUGUI TurnText;
+    public TextMeshProUGUI turnText;
+    public GameObject gameClearPanel;
+    public GameObject gameOverPanel;
 
     public Character character;
+
     public List<Character> playerCharacters;
     public List<Character> enemyCharacters;
 
@@ -62,28 +67,55 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayerAttack(int skillIndex, int targetEnemy)//플레이어 turn
     {
         //update문 재실행 차단
-        PlayerTurn = false;
+
 
         //애니메이션 및 기능 추가
 
-        //일단 지금은 큰 데미지 기준
-        enemyCharacters[targetEnemy].currentHP -= DB_petsSkill.GetEntity(skillIndex).highDamage;//에너미 피격
-        playerCharacters[currentPlayerIndex].currentMP -= DB_petsSkill.GetEntity(skillIndex).useMp;//mp 차감
-
-        yield return new WaitForSeconds(animationTime);
-
-        //PlayerTurn = false;//턴 넘겨주기
-        dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
-        character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
-        currentPlayerIndex += 1; //현재 플레이어 턴 설정
-        character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//어떤 캐릭터선택했는지 체크
-        ChangeTurnText();//지금이 몇번째 turn 인지 표시
-        EnemyTurn = true;
-        DeadCheck(enemyCharacters[targetEnemy].currentHP, enemyCharacters[targetEnemy]);//죽음감지
-        if (currentPlayerIndex >=4)
+        //mp 부족한지 체크
+        if(playerCharacters[currentPlayerIndex].currentMP<= DB_petsSkill.GetEntity(skillIndex).useMp)
         {
-            currentPlayerIndex = 0;
+            //경고창 띄우고 넘어가기
+            
+            Debug.Log("mp가 부족");
+            //PlayerTurn = true;
         }
+        else
+        {
+            PlayerTurn = false;
+            //데미지, mp 조절
+
+            enemyCharacters[targetEnemy].currentHP -= DB_petsSkill.GetEntity(skillIndex).highDamage;//에너미 피격
+            playerCharacters[currentPlayerIndex].currentMP -= DB_petsSkill.GetEntity(skillIndex).useMp;//mp 차감
+
+            yield return new WaitForSeconds(animationTime);
+
+            //초기화
+            dataPanelConnect.BeforeChooseSkill();//스킬패널 초기화
+            dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
+            character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
+                                             //선택체크
+            character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//체크 원을 원래자리로
+                                                                                                  //턴
+            currentPlayerIndex += 1; //현재 플레이어 턴 설정
+            ChangeTurnText();//지금이 몇번째 turn 인지 표시
+            EnemyTurn = true;
+            //사망감지
+            DeadCheck(enemyCharacters[targetEnemy].currentHP, enemyCharacters[targetEnemy]);//죽음감지
+            if (AreAllCharactersDead(enemyCharacters) == true)//모두 죽었는지 감지
+            {
+                Debug.Log("enemy all dead");
+                //코루틴으로 승리 표현 애니메이션
+                //화면멈추기
+                //승리패널 띄우기 - 재화 나가기 다시하기
+                gameClearPanel.SetActive(true);
+            }
+            //인덱스 관리
+            if (currentPlayerIndex >= 4)
+            {
+                currentPlayerIndex = 0;
+            }
+        }
+
     }
 
 
@@ -96,23 +128,35 @@ public class GameManager : MonoBehaviour
         playerCharacters[randomValue].currentHP -= DB_enemySkill.GetEntity(currentEnemyIndex).highDamage;
 
         yield return new WaitForSeconds(animationTime);
-        currentEnemyIndex += 1;
+
         character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;
+
+        currentEnemyIndex += 1;
         ChangeTurnText();
         PlayerTurn = true;
+
         DeadCheck(playerCharacters[randomValue].currentHP, playerCharacters[randomValue]);
+        if(AreAllCharactersDead(playerCharacters) == true)//모두 죽었는지 감지
+        {
+            Debug.Log("pet all dead");
+            //코루틴으로 패배 표현 애니메이션
+            //화면멈추기
+            //패배패널 띄우기
+            gameOverPanel.SetActive(true);
+        }
+
         if (currentEnemyIndex >= 4)
         {
             currentEnemyIndex = 0;
         }
     }
 
-    bool AreAllCharactersDead()
+    bool AreAllCharactersDead(List<Character> characterList)
     {
         // 모든 캐릭터의 HP가 0 이하인지 확인
-        foreach (Character playerCharacter in playerCharacters)
+        foreach (Character Character in characterList)
         {
-            if (playerCharacter.currentHP > 0)
+            if (Character.currentHP > 0)
             {
                 // 아직 생존한 캐릭터가 있다면 false 반환
                 return false;
@@ -126,7 +170,7 @@ public class GameManager : MonoBehaviour
     public void ChangeTurnText()//턴 text 연결
     {
         currentTurn += 1;
-        TurnText.text = currentTurn.ToString();
+        turnText.text = currentTurn.ToString();
     }
 
     private static GameManager instance = null;
@@ -157,12 +201,69 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DeadCheck(int hp, Character targetObject)
+    public void DeadCheck(int hp, Character targetObject)//죽음감지
     {
-        if (hp <= 0)
+        if (hp <= 0)//타겟 캐릭터 hp가 0이면
         {
             Renderer renderer = targetObject.GetComponent<Renderer>();
             renderer.material.color = Color.black;
         }
     }
+
+    public void stopTouch()//에너미 턴일시 화면터치 불가
+    {
+        
+    }
+    public void mpLack()
+    {
+
+    }
+    public void reBorn(List<Character> characterList)//부활 again 등 다시 체력이 찬다면
+    {
+        foreach (Character Character in characterList)
+        {
+            if (Character.currentHP > 0)
+            {
+                Renderer renderer = Character.GetComponent<Renderer>();
+                renderer.material.color = Color.white;
+
+            }
+        }
+    }
+    public void Restart()
+    {
+        //체력, mp 다시 배치
+        foreach (Character player in playerCharacters)
+        {
+            if (player is pet)
+            {
+                ((pet)player).SetPetChar();
+            }
+
+        }
+        foreach (Character enemy in enemyCharacters)
+        {
+            if (enemy is Enemy)
+            {
+                ((Enemy)enemy).SetEnemyChar();
+            }
+
+        }
+        //체력 높아지면 색깔 살려주고
+        reBorn(enemyCharacters);
+        reBorn(playerCharacters);
+        //턴 초기화
+        PlayerTurn = true;
+        EnemyTurn = false;
+        currentPlayerIndex = 0;
+        currentEnemyIndex = 0;
+        currentTurn =0;
+        //패널 닫기
+        gameClearPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        //턴 표시 업댓
+        ChangeTurnText();
+    }
+
 }
+
