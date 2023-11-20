@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
 
     public Character character;
+    public DataPanelConnect dataPanelConnect;
+    public SliderScript slider;
 
     public List<Character> playerCharacters;
     public List<Character> enemyCharacters;
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public bool PlayerTurn = true;
     public bool EnemyTurn = false;
-    public DataPanelConnect dataPanelConnect;
+
     void Start()
     {
         
@@ -45,6 +47,15 @@ public class GameManager : MonoBehaviour
     {
         if(PlayerTurn == true)//아군 턴일시
         {
+            while (playerCharacters[currentPlayerIndex].deadCheck)
+            {
+                currentPlayerIndex++;
+                if(currentPlayerIndex>4)
+                {
+                    currentPlayerIndex = 0;
+                }
+                Debug.Log(currentPlayerIndex);
+            }
             dataPanelConnect.DisplayCharInfo(currentPlayerIndex);//패널 배치
             if(dataPanelConnect.skillIndex != -1)//스킬 버튼이 눌렸다면, 턴끝나면 스킬 값 -1로 초기화
             {
@@ -66,10 +77,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PlayerAttack(int skillIndex, int targetEnemy)//플레이어 turn
     {
-        //update문 재실행 차단
 
 
-        //애니메이션 및 기능 추가
+
 
         //mp 부족한지 체크
         if(playerCharacters[currentPlayerIndex].currentMP<= DB_petsSkill.GetEntity(skillIndex).useMp)
@@ -81,24 +91,22 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //update문 재실행 차단
             PlayerTurn = false;
             //데미지, mp 조절
 
-            enemyCharacters[targetEnemy].currentHP -= DB_petsSkill.GetEntity(skillIndex).highDamage;//에너미 피격
+            dataPanelConnect.DisplayCharInfo(currentPlayerIndex);//패널 배치
+
+            //공격 애니메이션 및 연출
+
+            //슬라이더 까지 적용
+            enemyCharacters[targetEnemy].currentHP -= DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage+1+slider.slideValue));//에너미 피격
+            playerCharacters[currentPlayerIndex].currentHP -= slider.slideValue;
             playerCharacters[currentPlayerIndex].currentMP -= DB_petsSkill.GetEntity(skillIndex).useMp;//mp 차감
 
             yield return new WaitForSeconds(animationTime);
 
-            //초기화
-            dataPanelConnect.BeforeChooseSkill();//스킬패널 초기화
-            dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
-            character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
-                                             //선택체크
-            character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//체크 원을 원래자리로
-                                                                                                  //턴
-            currentPlayerIndex += 1; //현재 플레이어 턴 설정
-            ChangeTurnText();//지금이 몇번째 turn 인지 표시
-            EnemyTurn = true;
+            TurnPass();
             //사망감지
             DeadCheck(enemyCharacters[targetEnemy].currentHP, enemyCharacters[targetEnemy]);//죽음감지
             if (AreAllCharactersDead(enemyCharacters) == true)//모두 죽었는지 감지
@@ -109,11 +117,7 @@ public class GameManager : MonoBehaviour
                 //승리패널 띄우기 - 재화 나가기 다시하기
                 gameClearPanel.SetActive(true);
             }
-            //인덱스 관리
-            if (currentPlayerIndex >= 4)
-            {
-                currentPlayerIndex = 0;
-            }
+
         }
 
     }
@@ -124,8 +128,13 @@ public class GameManager : MonoBehaviour
 
         EnemyTurn = false;
         int randomValue = Random.Range(0, 4);
+        while (playerCharacters[randomValue].deadCheck)//플레이어 죽으면 다른 애 공격
+        {
+            randomValue = Random.Range(0, 4);
+        }
+        
         character.targetCheckCIrcle.transform.position = playerCharacters[randomValue].transform.position;//선택 표시하기
-        playerCharacters[randomValue].currentHP -= DB_enemySkill.GetEntity(currentEnemyIndex).highDamage;
+        playerCharacters[randomValue].currentHP -= DamageCalculate(DB_enemySkill.GetEntity(currentEnemyIndex).lowDamage, DB_enemySkill.GetEntity(currentEnemyIndex).highDamage+1);//데미지 랜덤값 주기
 
         yield return new WaitForSeconds(animationTime);
 
@@ -136,6 +145,7 @@ public class GameManager : MonoBehaviour
         PlayerTurn = true;
 
         DeadCheck(playerCharacters[randomValue].currentHP, playerCharacters[randomValue]);
+        //죽으면 선택하지 않게
         if(AreAllCharactersDead(playerCharacters) == true)//모두 죽었는지 감지
         {
             Debug.Log("pet all dead");
@@ -143,6 +153,7 @@ public class GameManager : MonoBehaviour
             //화면멈추기
             //패배패널 띄우기
             gameOverPanel.SetActive(true);
+            PlayerTurn = false;
         }
 
         if (currentEnemyIndex >= 4)
@@ -150,7 +161,12 @@ public class GameManager : MonoBehaviour
             currentEnemyIndex = 0;
         }
     }
-
+    public int DamageCalculate(int smallDamage, int bigDamage)
+    {
+        int randomDamageValue = Random.Range(smallDamage, bigDamage);
+        Debug.Log(randomDamageValue);
+        return randomDamageValue;
+    }
     bool AreAllCharactersDead(List<Character> characterList)
     {
         // 모든 캐릭터의 HP가 0 이하인지 확인
@@ -207,16 +223,32 @@ public class GameManager : MonoBehaviour
         {
             Renderer renderer = targetObject.GetComponent<Renderer>();
             renderer.material.color = Color.black;
+            targetObject.deadCheck = true;
         }
     }
 
-    public void stopTouch()//에너미 턴일시 화면터치 불가
+    public void StopTouch()//에너미 턴일시 화면터치 불가
     {
         
     }
-    public void mpLack()
+    public void TurnPass()//턴 pass 버튼
     {
-
+        PlayerTurn = false;
+        //초기화
+        dataPanelConnect.BeforeChooseSkill();//스킬패널 초기화
+        dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
+        character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
+                                         //선택체크
+        character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//체크 원을 원래자리로
+                                                                                              //턴
+        currentPlayerIndex += 1; //현재 플레이어 턴 설정
+        ChangeTurnText();//지금이 몇번째 turn 인지 표시
+        EnemyTurn = true;
+        //인덱스 관리
+        if (currentPlayerIndex >= 4)
+        {
+            currentPlayerIndex = 0;
+        }
     }
     public void reBorn(List<Character> characterList)//부활 again 등 다시 체력이 찬다면
     {
@@ -232,13 +264,14 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        //체력, mp 다시 배치
+        //체력, mp 다시 배치, deadcheck변수 초기화
         foreach (Character player in playerCharacters)
         {
             if (player is pet)
             {
                 ((pet)player).SetPetChar();
             }
+            player.deadCheck = false;
 
         }
         foreach (Character enemy in enemyCharacters)

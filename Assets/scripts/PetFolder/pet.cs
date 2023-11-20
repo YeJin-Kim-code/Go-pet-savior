@@ -9,6 +9,7 @@ public class pet : Character
     {
 
         SetPetChar();
+        animator = this.GetComponent<Animator>();
     }
 
     private void Update()

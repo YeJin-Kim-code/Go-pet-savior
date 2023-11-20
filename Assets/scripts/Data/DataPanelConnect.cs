@@ -13,7 +13,7 @@ public class DataPanelConnect : MonoBehaviour
     public Button petSkill2;
     public Button petSkill3;
     public TextMeshProUGUI petSkillDescript;
-    public Scrollbar controlScrollbar;
+    public Slider controlSlider;
     public TextMeshProUGUI controlText;
     public TextMeshProUGUI SkillDamageText;
     public TextMeshProUGUI skillUseHpText;
@@ -23,9 +23,15 @@ public class DataPanelConnect : MonoBehaviour
     public int charIndex;//일단 지정 추후 수정
     public int skillCount = 3;
     public int skillIndex = -1;
+
+    public bool isSkillPanelDisplay = false;
     private void Start()
     {
         BeforeChooseSkill();
+    }
+    private void Update()
+    {
+        SkillControlBarUpdate();
     }
     public void DisplayCharInfo(int _charIndex)
     {
@@ -49,11 +55,14 @@ public class DataPanelConnect : MonoBehaviour
     public void DisplayCharSkillInfo(int _skillIndex)//스킬인덱스와 스킬조절바 수를 매개변수로 int _skillControlBar
     {
         controlText.gameObject.SetActive(true);
-        controlScrollbar.gameObject.SetActive(true);
+        controlSlider.gameObject.SetActive(true);
         SkillDamageText.gameObject.SetActive(true);
         skillUseMpText.gameObject.SetActive(true);
         skillUseHpText.gameObject.SetActive(true);
         skillIndex = _skillIndex + charIndex * skillCount;
+        isSkillPanelDisplay = true;
+        //컨트롤
+        controlText.text = "Skill Control : "+GameManager.Instance.slider.slideValue.ToString();
         //스킬묘사
         petSkillDescript.text = DB_petsSkill.GetEntity(skillIndex).skillContent;
         //스킬에따른 데미지
@@ -65,19 +74,27 @@ public class DataPanelConnect : MonoBehaviour
     }
     public void BeforeChooseSkill()
     {
-
+        isSkillPanelDisplay=false;
         controlText.gameObject.SetActive(false);
-        controlScrollbar.gameObject.SetActive(false);
+        //컨트롤 초기화
+        controlSlider.value = 0;
+        controlSlider.gameObject.SetActive(false);
         petSkillDescript.text = "스킬을 선택하세요";
         SkillDamageText.gameObject.SetActive(false);
         skillUseMpText.text = "스킬을 선택하세요";
         skillUseHpText.gameObject.SetActive(false);
     }
-    public void SkillControlBarUpdate(int _skillControlBar)
+    public void SkillControlBarUpdate()
     {
-        //스킬에 따른 데미지
-        
-        //스킬 hp
+        if(isSkillPanelDisplay)
+        {
+            controlText.text = "Skill Control : " + GameManager.Instance.slider.slideValue.ToString();
+            //스킬에따른 데미지
+            SkillDamageText.text = "Damage : " + DB_petsSkill.GetEntity(skillIndex).lowDamage.ToString() + " ~ " + (DB_petsSkill.GetEntity(skillIndex).highDamage+ GameManager.Instance.slider.slideValue).ToString();
+            //스킬 hp
+            skillUseHpText.text = "Hp : " + GameManager.Instance.playerCharacters[charIndex].currentHP.ToString() + " -> " + (GameManager.Instance.playerCharacters[charIndex].currentHP - GameManager.Instance.slider.slideValue).ToString();
+        }
+
     }
 
     public void TestButton()

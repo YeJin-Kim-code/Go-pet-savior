@@ -7,13 +7,14 @@ public class Character : MonoBehaviour
 {
 
     [SerializeField]
+    public Animator animator;
     public int charIndex = 0; // ±âº»°ª
     public int targetEnemyIndex =  -1;
     public int maxHP;
     public int currentHP;
     public int maxMP;
     public int currentMP;
-
+    public bool deadCheck = false;
     public GameObject targetCheckCIrcle;
     public Vector3 checkCircleDefaultPosition = new Vector3(10f, 10f, 10f);
     private void Start()
@@ -21,6 +22,8 @@ public class Character : MonoBehaviour
         //m_dataPanel = GameObject.FindObjectOfType<DataPanelConnect>();
         //SetPetChar();
         //SetEnemyChar();
+
+
     }
 
     private void Update()
