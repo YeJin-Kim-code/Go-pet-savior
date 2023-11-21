@@ -18,7 +18,8 @@ public class DataPanelConnect : MonoBehaviour
     public TextMeshProUGUI SkillDamageText;
     public TextMeshProUGUI skillUseHpText;
     public TextMeshProUGUI skillUseMpText;
-
+    public Text damageTextPrefab;  // 데미지를 표시할 Text UI 프리팹
+    public Transform canvasTransform;  // UI가 속할 Canvas의 Transform
 
     public int charIndex;//일단 지정 추후 수정
     public int skillCount = 3;
@@ -96,7 +97,16 @@ public class DataPanelConnect : MonoBehaviour
         }
 
     }
+    public void ShowDamageText(int damageAmount, Vector3 position)
+    {
+        // 데미지 텍스트 생성
+        Text damageText = Instantiate(damageTextPrefab, canvasTransform);
+        damageText.transform.position = Camera.main.WorldToScreenPoint(position);
+        damageText.text = "-" + damageAmount.ToString();
 
+        // 일정 시간 후에 텍스트 삭제
+        Destroy(damageText.gameObject, 2f);  // 여기서 2초 후에 삭제되도록 설정, 필요에 따라 조절 가능
+    }
     public void TestButton()
     {
         DisplayCharInfo(0);

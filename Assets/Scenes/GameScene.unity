@@ -799,6 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -1426,6 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -1815,6 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -2901,6 +2904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -3075,6 +3079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -3249,6 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cfead0ae35a0142ad110ad13f699e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -4182,6 +4188,7 @@ MonoBehaviour:
   charIndex: 0
   skillCount: 3
   skillIndex: -1
+  isSkillPanelDisplay: 0
 --- !u!4 &1236187199
 Transform:
   m_ObjectHideFlags: 0
@@ -4483,6 +4490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -4802,6 +4810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675aba2e08b6b746a0a8c320b9d3787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0
@@ -5391,6 +5400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d518286e3e9c74cb98031e7ae9772d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   charIndex: 0
   targetEnemyIndex: -1
   maxHP: 0

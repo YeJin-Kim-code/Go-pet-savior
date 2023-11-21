@@ -78,9 +78,6 @@ public class GameManager : MonoBehaviour
     IEnumerator PlayerAttack(int skillIndex, int targetEnemy)//플레이어 turn
     {
 
-
-
-
         //mp 부족한지 체크
         if(playerCharacters[currentPlayerIndex].currentMP<= DB_petsSkill.GetEntity(skillIndex).useMp)
         {
@@ -95,10 +92,8 @@ public class GameManager : MonoBehaviour
             PlayerTurn = false;
             //데미지, mp 조절
 
-            dataPanelConnect.DisplayCharInfo(currentPlayerIndex);//패널 배치
-
             //공격 애니메이션 및 연출
-
+            LoadSkillAniAndEffect(playerCharacters[currentPlayerIndex], dataPanelConnect.skillIndex);
             //슬라이더 까지 적용
             enemyCharacters[targetEnemy].currentHP -= DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage+1+slider.slideValue));//에너미 피격
             playerCharacters[currentPlayerIndex].currentHP -= slider.slideValue;
@@ -216,7 +211,16 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
+    public void LoadSkillAniAndEffect(Character petchar, int skillIndex)// Character target)//애니메이션 및 스킬 이팩트 관리
+    {
+        if(skillIndex==2||skillIndex==6)// 지금 애니메이션 나온 수
+        { 
+            petchar.animator.SetTrigger("Attack"+skillIndex);//(pet)쳐야할듯 일단
+            Debug.Log("animation");
+        }
 
+        //타겟 포지션에 이팩트
+    }
     public void DeadCheck(int hp, Character targetObject)//죽음감지
     {
         if (hp <= 0)//타겟 캐릭터 hp가 0이면

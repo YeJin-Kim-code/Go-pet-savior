@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6127ccf1f3b132d4da15c1835874f041
+guid: 8b81a06a9301bbb4fbb0785c212d2e09
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,91 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: turtle skill1_0
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 64
-        height: 73
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33b1fa698d46a46489cc346874fcb645
-      internalID: 1702247448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: turtle skill1_1
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 62
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 026d4e2c855f6094dbc599df32fd45e8
-      internalID: -1541926846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: turtle skill1_2
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 0
-        width: 66
-        height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aeec4fc0bc4f71d4a90cf3a76fe0e3e4
-      internalID: -1065471819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: turtle skill1_3
-      rect:
-        serializedVersion: 2
-        x: 311
-        y: 1
-        width: 60
-        height: 73
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c6d078c75be05d4fa0c4d80689dfe63
-      internalID: -271836229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -216,11 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      turtle skill1_0: 1702247448
-      turtle skill1_1: -1541926846
-      turtle skill1_2: -1065471819
-      turtle skill1_3: -271836229
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,6 +8,7 @@ public class Enemy : Character
     void Start()
     {
         SetEnemyChar();
+        animator = this.GetComponent<Animator>();
     }
 
     public void SetEnemyChar()
