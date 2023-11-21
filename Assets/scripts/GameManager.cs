@@ -19,11 +19,13 @@ public class GameManager : MonoBehaviour
 
     public List<Character> playerCharacters;
     public List<Character> enemyCharacters;
+    public List<GameObject> effectGameObjects;
 
     public int currentPlayerIndex = 0;
     public int currentEnemyIndex = 0;
     public int currentTurn = 1;
     public float animationTime = 3f;
+    public int damageRandomResult;
 
     public bool PlayerTurn = true;
     public bool EnemyTurn = false;
@@ -77,7 +79,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PlayerAttack(int skillIndex, int targetEnemy)//플레이어 turn
     {
-
         //mp 부족한지 체크
         if(playerCharacters[currentPlayerIndex].currentMP<= DB_petsSkill.GetEntity(skillIndex).useMp)
         {
@@ -92,13 +93,19 @@ public class GameManager : MonoBehaviour
             PlayerTurn = false;
             //데미지, mp 조절
 
-            //공격 애니메이션 및 연출
+            //공격 애니메이션
             LoadSkillAniAndEffect(playerCharacters[currentPlayerIndex], dataPanelConnect.skillIndex);
+
+
             //슬라이더 까지 적용
-            enemyCharacters[targetEnemy].currentHP -= DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage+1+slider.slideValue));//에너미 피격
+            damageRandomResult = DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage + 1 + slider.slideValue));
+            enemyCharacters[targetEnemy].currentHP -= damageRandomResult;//에너미 피격
             playerCharacters[currentPlayerIndex].currentHP -= slider.slideValue;
             playerCharacters[currentPlayerIndex].currentMP -= DB_petsSkill.GetEntity(skillIndex).useMp;//mp 차감
-
+            //연출
+            //텍스트 표시
+            dataPanelConnect.ShowDamageText(damageRandomResult, enemyCharacters[targetEnemy].gameObject.transform.position);
+            ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
             yield return new WaitForSeconds(animationTime);
 
             TurnPass();
@@ -112,11 +119,8 @@ public class GameManager : MonoBehaviour
                 //승리패널 띄우기 - 재화 나가기 다시하기
                 gameClearPanel.SetActive(true);
             }
-
         }
-
     }
-
 
     IEnumerator EnemyAttack()//데미지 받기
     {
@@ -184,33 +188,6 @@ public class GameManager : MonoBehaviour
         turnText.text = currentTurn.ToString();
     }
 
-    private static GameManager instance = null;
-
-    void Awake()
-    {
-        if (null == instance)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (null == instance)
-            {
-                return null;
-            }
-            return instance;
-        }
-    }
     public void LoadSkillAniAndEffect(Character petchar, int skillIndex)// Character target)//애니메이션 및 스킬 이팩트 관리
     {
         if(skillIndex==2||skillIndex==6)// 지금 애니메이션 나온 수
@@ -220,6 +197,15 @@ public class GameManager : MonoBehaviour
         }
 
         //타겟 포지션에 이팩트
+    }
+
+    public void ShowEffect(int skillIndex, Character enemychar, List<GameObject> effect)
+    {
+        if(effect[skillIndex] != null)
+        {
+            GameObject effectobj = Instantiate(effect[skillIndex], enemychar.transform.position, Quaternion.identity);
+            Destroy(effectobj, 1f);
+        }
     }
     public void DeadCheck(int hp, Character targetObject)//죽음감지
     {
@@ -254,6 +240,7 @@ public class GameManager : MonoBehaviour
             currentPlayerIndex = 0;
         }
     }
+
     public void reBorn(List<Character> characterList)//부활 again 등 다시 체력이 찬다면
     {
         foreach (Character Character in characterList)
@@ -301,6 +288,32 @@ public class GameManager : MonoBehaviour
         //턴 표시 업댓
         ChangeTurnText();
     }
+    private static GameManager instance = null;
 
+    void Awake()
+    {
+        if (null == instance)
+        {
+            instance = this;
+
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (null == instance)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
 }
 

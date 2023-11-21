@@ -1483,10 +1483,24 @@ MonoBehaviour:
   - {fileID: 910016661}
   - {fileID: 888837138}
   - {fileID: 537277012}
+  effectGameObjects:
+  - {fileID: 234607711097159238, guid: c4d608fa43445c9438d789a4a5ab2593, type: 3}
+  - {fileID: 234607711097159238, guid: c4d608fa43445c9438d789a4a5ab2593, type: 3}
+  - {fileID: 6451176654310231147, guid: ebab8a12440225843a664d6f41d35616, type: 3}
+  - {fileID: 3282059823960900598, guid: 541bd612e2202c14689428e831b444a6, type: 3}
+  - {fileID: 4919241789103876921, guid: b7db356ae13e4164c95f3e3fb5299761, type: 3}
+  - {fileID: 6451176654310231147, guid: ebab8a12440225843a664d6f41d35616, type: 3}
+  - {fileID: 1707642219081486358, guid: d843998e70f675e4bb814fe273a0fe3b, type: 3}
+  - {fileID: 1707642219081486358, guid: d843998e70f675e4bb814fe273a0fe3b, type: 3}
+  - {fileID: 1707642219081486358, guid: d843998e70f675e4bb814fe273a0fe3b, type: 3}
+  - {fileID: 6451176654310231147, guid: ebab8a12440225843a664d6f41d35616, type: 3}
+  - {fileID: 6451176654310231147, guid: ebab8a12440225843a664d6f41d35616, type: 3}
+  - {fileID: 6451176654310231147, guid: ebab8a12440225843a664d6f41d35616, type: 3}
   currentPlayerIndex: 0
   currentEnemyIndex: 0
   currentTurn: 1
   animationTime: 1
+  damageRandomResult: 0
   PlayerTurn: 0
   EnemyTurn: 0
 --- !u!4 &563667690
@@ -4185,6 +4199,8 @@ MonoBehaviour:
   SkillDamageText: {fileID: 1012470299}
   skillUseHpText: {fileID: 649702860}
   skillUseMpText: {fileID: 1459203558}
+  damageTextPrefab: {fileID: 623445944596813174, guid: 8a9f33f2f0054ef42bb9cc9edc2b4ca7, type: 3}
+  canvasTransform: {fileID: 35706939}
   charIndex: 0
   skillCount: 3
   skillIndex: -1

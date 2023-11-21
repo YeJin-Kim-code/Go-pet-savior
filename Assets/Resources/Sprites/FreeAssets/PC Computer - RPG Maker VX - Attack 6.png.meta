@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: 9d822d0a9b182134fa546ac384124190
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 240
+        width: 127
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a35b1ee948b00429534928b6fb0ae7
+      internalID: 797677782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 204
+        width: 173
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e24744eaaa8f08419f1ab2b43abdd61
+      internalID: -241143589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_4
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 250
+        width: 103
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4180bd9afd5d5448a0dfae6b1f28a7
+      internalID: 1083657641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_5
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 230
+        width: 120
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9256763d8ab2ec14f892c8565ff38b0e
+      internalID: -2028312085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_21
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 20
+        width: 169
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8907637e7f9613c4988180a3da97cb99
+      internalID: 1628521007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_22
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 7
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7964f1a5cab361b45931671f6f78909a
+      internalID: -1196168832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_23
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 7
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beeb6b18c40033848be09b42d5ae32e1
+      internalID: -2085680338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_30
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 52
+        width: 88
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa416db3107728468f733c82800c0e2
+      internalID: -800687789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - RPG Maker VX - Attack 6_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 207
+        width: 150
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb0b2685b7e37c4d9a9afcd0f76c5e6
+      internalID: -287514835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - RPG Maker VX - Attack 6_0: 797677782
+      PC Computer - RPG Maker VX - Attack 6_1: -287514835
+      PC Computer - RPG Maker VX - Attack 6_10: -523528
+      PC Computer - RPG Maker VX - Attack 6_11: -38390790
+      PC Computer - RPG Maker VX - Attack 6_12: 1570360747
+      PC Computer - RPG Maker VX - Attack 6_13: 468911155
+      PC Computer - RPG Maker VX - Attack 6_14: -415911873
+      PC Computer - RPG Maker VX - Attack 6_15: -972466367
+      PC Computer - RPG Maker VX - Attack 6_16: -1211924624
+      PC Computer - RPG Maker VX - Attack 6_17: -1244070688
+      PC Computer - RPG Maker VX - Attack 6_18: 1420501117
+      PC Computer - RPG Maker VX - Attack 6_19: -1390038
+      PC Computer - RPG Maker VX - Attack 6_2: -241143589
+      PC Computer - RPG Maker VX - Attack 6_20: 1016235718
+      PC Computer - RPG Maker VX - Attack 6_21: 1628521007
+      PC Computer - RPG Maker VX - Attack 6_22: -1196168832
+      PC Computer - RPG Maker VX - Attack 6_23: -2085680338
+      PC Computer - RPG Maker VX - Attack 6_24: 1066192334
+      PC Computer - RPG Maker VX - Attack 6_25: -1142735015
+      PC Computer - RPG Maker VX - Attack 6_26: -345569732
+      PC Computer - RPG Maker VX - Attack 6_27: 814354044
+      PC Computer - RPG Maker VX - Attack 6_28: 1340885213
+      PC Computer - RPG Maker VX - Attack 6_29: -1436256971
+      PC Computer - RPG Maker VX - Attack 6_3: 1443227286
+      PC Computer - RPG Maker VX - Attack 6_30: -800687789
+      PC Computer - RPG Maker VX - Attack 6_31: 1314335560
+      PC Computer - RPG Maker VX - Attack 6_32: 1839046266
+      PC Computer - RPG Maker VX - Attack 6_33: 1984362370
+      PC Computer - RPG Maker VX - Attack 6_34: 853140103
+      PC Computer - RPG Maker VX - Attack 6_35: 2086199359
+      PC Computer - RPG Maker VX - Attack 6_36: 717121434
+      PC Computer - RPG Maker VX - Attack 6_37: -1533033180
+      PC Computer - RPG Maker VX - Attack 6_38: -1681132503
+      PC Computer - RPG Maker VX - Attack 6_39: -721153706
+      PC Computer - RPG Maker VX - Attack 6_4: 1083657641
+      PC Computer - RPG Maker VX - Attack 6_5: -2028312085
+      PC Computer - RPG Maker VX - Attack 6_6: -264177437
+      PC Computer - RPG Maker VX - Attack 6_7: 2108660402
+      PC Computer - RPG Maker VX - Attack 6_8: -1573716300
+      PC Computer - RPG Maker VX - Attack 6_9: -1654272382
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
