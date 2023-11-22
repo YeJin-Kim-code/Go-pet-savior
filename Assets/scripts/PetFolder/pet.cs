@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class pet : Character
 {
-    private List<System.Action> skillFunctions = new List<System.Action>();
     private void Start()
     {
 
@@ -71,35 +70,6 @@ public class pet : Character
         this.currentMP = DB_petInfo.GetEntity(charIndex).mp;
     }
 
-    // 스킬 실행 함수
-    void ExecuteSkill(int index)
-    {
-        if (index >= 0 && index < skillFunctions.Count)
-        {
-            // 해당 인덱스의 스킬 함수를 호출
-            skillFunctions[index]?.Invoke();
-        }
-        else
-        {
-            Debug.LogError("Invalid skill index: " + index);
-        }
-    }
-    public void SetSkill()
-    {
-        
-    }
-    // 각각의 스킬 함수들 함수를 만들어서 애니메이션 적용할 애, 스킬번호, 이팩트 줄 위치 매개변수로 받자
-    void catSkill1()
-    {
-        Debug.Log("Executing Skill 1");
-        // 스킬 1에 대한 애니메이션 및 연출 코드 추가
-    }
-
-    void Skill2()
-    {
-        Debug.Log("Executing Skill 2");
-        // 스킬 2에 대한 애니메이션 및 연출 코드 추가
-    }
 
 }
 

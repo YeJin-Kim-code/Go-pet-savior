@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
             //텍스트 표시
             dataPanelConnect.ShowDamageText(damageRandomResult, enemyCharacters[targetEnemy].gameObject.transform.position);
             ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
+            StartCoroutine(GetDamageTurnRed(enemyCharacters[targetEnemy]));
             yield return new WaitForSeconds(animationTime);
 
             TurnPass();
@@ -124,17 +125,21 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EnemyAttack()//데미지 받기
     {
-
         EnemyTurn = false;
         int randomValue = Random.Range(0, 4);
+        int EnemyRandomDamage = 0;
         while (playerCharacters[randomValue].deadCheck)//플레이어 죽으면 다른 애 공격
         {
             randomValue = Random.Range(0, 4);
         }
         
         character.targetCheckCIrcle.transform.position = playerCharacters[randomValue].transform.position;//선택 표시하기
-        playerCharacters[randomValue].currentHP -= DamageCalculate(DB_enemySkill.GetEntity(currentEnemyIndex).lowDamage, DB_enemySkill.GetEntity(currentEnemyIndex).highDamage+1);//데미지 랜덤값 주기
+        EnemyRandomDamage = DamageCalculate(DB_enemySkill.GetEntity(currentEnemyIndex).lowDamage, DB_enemySkill.GetEntity(currentEnemyIndex).highDamage + 1);//데미지 랜덤값 주기
+        playerCharacters[randomValue].currentHP -= EnemyRandomDamage;
 
+        //연출
+        dataPanelConnect.ShowDamageText(EnemyRandomDamage, playerCharacters[randomValue].transform.position);
+        StartCoroutine(GetDamageTurnRed(playerCharacters[randomValue]));
         yield return new WaitForSeconds(animationTime);
 
         character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;
@@ -199,13 +204,37 @@ public class GameManager : MonoBehaviour
         //타겟 포지션에 이팩트
     }
 
-    public void ShowEffect(int skillIndex, Character enemychar, List<GameObject> effect)
+    public void ShowEffect(int skillIndex, Character enemychar, List<GameObject> effect)//이팩트
     {
         if(effect[skillIndex] != null)
         {
             GameObject effectobj = Instantiate(effect[skillIndex], enemychar.transform.position, Quaternion.identity);
             Destroy(effectobj, 1f);
         }
+    }
+
+    IEnumerator GetDamageTurnRed(Character damagedChar)
+    {
+        Renderer render = damagedChar.GetComponent<Renderer>();
+        int countTime = 0;
+        while(countTime < 3)
+        {
+            if(countTime%2 ==0)
+            {
+                render.material.color = Color.red;
+                Debug.Log("red");
+            }
+            else
+            {
+                render.material.color = Color.white;
+                Debug.Log("white");
+            }
+
+            yield return new WaitForSeconds(0.2f);
+            countTime++;
+        }
+        render.material.color = Color.white;
+
     }
     public void DeadCheck(int hp, Character targetObject)//죽음감지
     {
