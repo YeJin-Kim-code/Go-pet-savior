@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public Character character;
     public DataPanelConnect dataPanelConnect;
     public SliderScript slider;
-
+    public SoundManager soundManager;
     public List<Character> playerCharacters;
     public List<Character> enemyCharacters;
     public List<GameObject> effectGameObjects;
@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        //배경음 나중에 수정
+        soundManager.BgSoundPlay(soundManager.background);
         // 게임 시작 초기화 및 캐릭터 생성
         //코루틴으로 
         // playerCharacters와 enemyCharacters 리스트에 캐릭터 추가
@@ -107,6 +108,9 @@ public class GameManager : MonoBehaviour
             dataPanelConnect.ShowDamageText(damageRandomResult, enemyCharacters[targetEnemy].gameObject.transform.position);
             ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
             StartCoroutine(GetDamageTurnRed(enemyCharacters[targetEnemy]));
+
+            //사운드
+            soundManager.SFXPlay(soundManager.petSkillSound[skillIndex]);
             yield return new WaitForSeconds(animationTime);
 
             TurnPass();

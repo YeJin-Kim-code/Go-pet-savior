@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Character : MonoBehaviour
 {
@@ -17,20 +20,42 @@ public class Character : MonoBehaviour
     public bool deadCheck = false;
     public GameObject targetCheckCIrcle;
     public Vector3 checkCircleDefaultPosition = new Vector3(10f, 10f, 10f);
+    public TextMeshProUGUI hpText;
     private void Start()
     {
         //m_dataPanel = GameObject.FindObjectOfType<DataPanelConnect>();
         //SetPetChar();
         //SetEnemyChar();
-
-
+        //hpText = Instantiate(GameManager.Instance.dataPanelConnect.showNowHpText, transform);
+        //hpText.gameObject.SetActive(false); // 초기에는 비활성화
     }
 
     private void Update()
     {
         ClickCheckEnemy();
     }
+    public void OnMouseOver()
+    {
+        //StartCoroutine(ShowNowHp());
 
+        //hpText.gameObject.SetActive(true);
+        //Vector3 fixPosition = new Vector3(1f, 1f, 0f);
+        //hpText.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + fixPosition);
+        GameManager.Instance.dataPanelConnect.ShowNowHpText(this.transform.position);
+        // 텍스트 업데이트
+        //UpdateHPText();
+        GameManager.Instance.dataPanelConnect.UpdateNowHpText(this.currentHP, this.maxHP);
+    }
+
+    public void OnMouseExit()
+    {
+        GameManager.Instance.dataPanelConnect.HideNowHpText();
+    }
+    void UpdateHPText()
+    {
+        // HP 텍스트 업데이트
+        hpText.text = "HP : " + this.currentHP.ToString() + "/" + this.maxHP.ToString();
+    }
     public void ClickCheckEnemy()
     {
         if (Input.GetMouseButtonDown(0))
@@ -79,5 +104,17 @@ public class Character : MonoBehaviour
     {
 
     }
+    IEnumerator ShowNowHp()
+    {
 
+        TextMeshProUGUI showHpText = Instantiate(GameManager.Instance.dataPanelConnect.showNowHpText, GameManager.Instance.dataPanelConnect.canvasTransform);
+        showHpText.text = "HP : " + this.currentHP.ToString() + "/" + this.maxHP.ToString();
+        Vector3 fixPosition = new Vector3(1f, 1f, 0f);
+        showHpText.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + fixPosition);
+
+        yield return new WaitForSeconds(5f);
+
+        Destroy(showHpText);
+    }
+    //마우스 놓으면 destroy
 }

@@ -20,7 +20,8 @@ public class DataPanelConnect : MonoBehaviour
     public TextMeshProUGUI skillUseMpText;
     public TextMeshProUGUI damageTextPrefab;  // 데미지를 표시할 Text UI 프리팹
     public Transform canvasTransform;  // UI가 속할 Canvas의 Transform
-
+    public TextMeshProUGUI showNowHpText;
+    public TextMeshProUGUI hpText;
     public int charIndex;//일단 지정 추후 수정
     public int skillCount = 3;
     public int skillIndex = -1;
@@ -29,6 +30,8 @@ public class DataPanelConnect : MonoBehaviour
     private void Start()
     {
         BeforeChooseSkill();
+        hpText = Instantiate(GameManager.Instance.dataPanelConnect.showNowHpText, canvasTransform);
+        hpText.gameObject.SetActive(false); // 초기에는 비활성화
     }
     private void Update()
     {
@@ -107,6 +110,24 @@ public class DataPanelConnect : MonoBehaviour
 
         // 일정 시간 후에 텍스트 삭제
         Destroy(damageText.gameObject, 1f);  // 여기서 2초 후에 삭제되도록 설정, 필요에 따라 조절 가능
+    }
+
+    public void ShowNowHpText(Vector3 position)
+    {
+        hpText.gameObject.SetActive(true);
+        Vector3 fixPosition = new Vector3(1f, 1f, 0f);
+        hpText.transform.position = Camera.main.WorldToScreenPoint(position + fixPosition);
+
+    }
+
+    public void HideNowHpText()
+    {
+        hpText.gameObject.SetActive(false);
+    }
+
+    public void UpdateNowHpText(int currentHp, int maxHp)
+    {
+        hpText.text = "HP : " + currentHp.ToString() + "/" + maxHp.ToString();
     }
     public void TestButton()
     {
