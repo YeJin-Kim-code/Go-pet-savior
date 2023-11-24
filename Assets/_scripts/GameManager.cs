@@ -23,22 +23,22 @@ public class GameManager : MonoBehaviour
 
     public int currentPlayerIndex = 0;
     public int currentEnemyIndex = 0;
-    public int currentTurn = 1;
-    public float animationTime = 3f;
-    public int damageRandomResult;
+    private int currentTurn = 1;
+    private float m_animationTime = 2f;
+    private int m_damageRandomResult;
 
-    public bool PlayerTurn = true;
-    public bool EnemyTurn = false;
+    private bool m_playerTurn = true;
+    private bool m_enemyTurn = false;
 
     void Start()
     {
         //배경음 나중에 수정
-        soundManager.BgSoundPlay(soundManager.background);
+        //soundManager.BgSoundPlay(soundManager.background);
         // 게임 시작 초기화 및 캐릭터 생성
         //코루틴으로 
         // playerCharacters와 enemyCharacters 리스트에 캐릭터 추가
         // 일단은 수동으로 놓았지만 코드로 작성해보기
-        PlayerTurn = true;
+        m_playerTurn = true;
         Debug.Log(playerCharacters[0].maxHP);
     }
 
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
     public void PlayGame()
     {
-        if(PlayerTurn == true)//아군 턴일시
+        if(m_playerTurn == true)//아군 턴일시
         {
             while (playerCharacters[currentPlayerIndex].deadCheck)
             {
@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
             dataPanelConnect.DisplayCharInfo(currentPlayerIndex);//패널 배치
             if(dataPanelConnect.skillIndex != -1)//스킬 버튼이 눌렸다면, 턴끝나면 스킬 값 -1로 초기화
             {
+                //동그란원 그거 스킬 누르고 나서 부터 마우스 올리면 뜨기
+                //만약 스킬인덱스가 전체공격, 자힐, 타힐 등등이면 스킬 인덱스에 따라 마우스 원 올릴 수 있는 애들 제한
                 //Debug.Log(dataPanelConnect.skillIndex);
                 if(character.targetEnemyIndex != -1)
                 {
@@ -71,7 +73,7 @@ public class GameManager : MonoBehaviour
 
             //playerCharacters[currentPlayerIndex]
         }
-        else if (EnemyTurn == true)//적군 턴일시
+        else if (m_enemyTurn == true)//적군 턴일시
         {
             StartCoroutine(EnemyAttack());
 
@@ -86,32 +88,25 @@ public class GameManager : MonoBehaviour
             //경고창 띄우고 넘어가기
             
             Debug.Log("mp가 부족");
-            //PlayerTurn = true;
         }
         else
         {
             //update문 재실행 차단
-            PlayerTurn = false;
+            m_playerTurn = false;
             //데미지, mp 조절
 
             //공격 애니메이션
             LoadSkillAniAndEffect(playerCharacters[currentPlayerIndex], dataPanelConnect.skillIndex);
 
 
-            //슬라이더 까지 적용
-            damageRandomResult = DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage + 1 + slider.slideValue));
-            enemyCharacters[targetEnemy].currentHP -= damageRandomResult;//에너미 피격
+            //데미지 슬라이더 까지 적용
+            petSkillDamage(skillIndex, targetEnemy);
             playerCharacters[currentPlayerIndex].currentHP -= slider.slideValue;
             playerCharacters[currentPlayerIndex].currentMP -= DB_petsSkill.GetEntity(skillIndex).useMp;//mp 차감
-            //연출
-            //텍스트 표시
-            dataPanelConnect.ShowDamageText(damageRandomResult, enemyCharacters[targetEnemy].gameObject.transform.position);
-            ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
-            StartCoroutine(GetDamageTurnRed(enemyCharacters[targetEnemy]));
 
             //사운드
             soundManager.SFXPlay(soundManager.petSkillSound[skillIndex]);
-            yield return new WaitForSeconds(animationTime);
+            yield return new WaitForSeconds(m_animationTime);
 
             TurnPass();
             //사망감지
@@ -123,13 +118,15 @@ public class GameManager : MonoBehaviour
                 //화면멈추기
                 //승리패널 띄우기 - 재화 나가기 다시하기
                 gameClearPanel.SetActive(true);
+                m_playerTurn = false;
+                m_enemyTurn = false;
             }
         }
     }
 
     IEnumerator EnemyAttack()//데미지 받기
     {
-        EnemyTurn = false;
+        m_enemyTurn = false;
         int randomValue = Random.Range(0, 4);
         int EnemyRandomDamage = 0;
         while (playerCharacters[randomValue].deadCheck)//플레이어 죽으면 다른 애 공격
@@ -144,13 +141,13 @@ public class GameManager : MonoBehaviour
         //연출
         dataPanelConnect.ShowDamageText(EnemyRandomDamage, playerCharacters[randomValue].transform.position);
         StartCoroutine(GetDamageTurnRed(playerCharacters[randomValue]));
-        yield return new WaitForSeconds(animationTime);
+        yield return new WaitForSeconds(m_animationTime);
 
         character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;
 
         currentEnemyIndex += 1;
         ChangeTurnText();
-        PlayerTurn = true;
+        m_playerTurn = true;
 
         DeadCheck(playerCharacters[randomValue].currentHP, playerCharacters[randomValue]);
         //죽으면 선택하지 않게
@@ -161,13 +158,40 @@ public class GameManager : MonoBehaviour
             //화면멈추기
             //패배패널 띄우기
             gameOverPanel.SetActive(true);
-            PlayerTurn = false;
+            m_playerTurn = false;
+            m_enemyTurn = false;
         }
 
         if (currentEnemyIndex >= 4)
         {
             currentEnemyIndex = 0;
         }
+    }
+    public void petSkillDamage(int skillIndex, int targetEnemy)
+    {
+        //if (skillIndex == 0 || skillIndex == 1 || skillIndex == 3 || skillIndex == 9 || skillIndex == 10)//스킬이 단일 공격이면
+        //{
+        //    petDefaultDamage(skillIndex, targetEnemy);
+        //}
+        //else if (skillIndex == 4 || skillIndex == 5)// 다중 공격
+        //{
+        //    Debug.Log("skillMultiAttack");
+        //}
+        //else
+        //{
+        //    Debug.Log("구현 예정");
+        //}
+        petDefaultDamage(skillIndex, targetEnemy);
+    }
+
+    public void petDefaultDamage(int skillIndex, int targetEnemy)
+    {
+        Debug.Assert(skillIndex>=0 && targetEnemy>=0);//항상 참이되어야 매개변수 값이 유효한지 점검
+        m_damageRandomResult = DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage + 1 + slider.slideValue));//랜덤값 공격
+        enemyCharacters[targetEnemy].currentHP -= m_damageRandomResult;//에너미 피격
+        dataPanelConnect.ShowDamageText(m_damageRandomResult, enemyCharacters[targetEnemy].gameObject.transform.position);//데미지 텍스트 표시
+        ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
+        StartCoroutine(GetDamageTurnRed(enemyCharacters[targetEnemy]));
     }
     public int DamageCalculate(int smallDamage, int bigDamage)
     {
@@ -199,7 +223,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadSkillAniAndEffect(Character petchar, int skillIndex)// Character target)//애니메이션 및 스킬 이팩트 관리
     {
-        if(skillIndex==2||skillIndex==6)// 지금 애니메이션 나온 수
+        if(skillIndex!=4||skillIndex!=8)// 지금 애니메이션 나온 수
         { 
             petchar.animator.SetTrigger("Attack"+skillIndex);//(pet)쳐야할듯 일단
             Debug.Log("animation");
@@ -256,7 +280,7 @@ public class GameManager : MonoBehaviour
     }
     public void TurnPass()//턴 pass 버튼
     {
-        PlayerTurn = false;
+        m_playerTurn = false;
         //초기화
         dataPanelConnect.BeforeChooseSkill();//스킬패널 초기화
         dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
@@ -266,7 +290,7 @@ public class GameManager : MonoBehaviour
                                                                                               //턴
         currentPlayerIndex += 1; //현재 플레이어 턴 설정
         ChangeTurnText();//지금이 몇번째 turn 인지 표시
-        EnemyTurn = true;
+        m_enemyTurn = true;
         //인덱스 관리
         if (currentPlayerIndex >= 4)
         {
@@ -310,8 +334,8 @@ public class GameManager : MonoBehaviour
         reBorn(enemyCharacters);
         reBorn(playerCharacters);
         //턴 초기화
-        PlayerTurn = true;
-        EnemyTurn = false;
+        m_playerTurn = true;
+        m_enemyTurn = false;
         currentPlayerIndex = 0;
         currentEnemyIndex = 0;
         currentTurn =0;
@@ -329,11 +353,11 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
 
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
