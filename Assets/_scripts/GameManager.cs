@@ -139,6 +139,7 @@ public class GameManager : MonoBehaviour
         playerCharacters[randomValue].currentHP -= EnemyRandomDamage;
 
         //¿¬Ãâ
+        LoadSkillAniEnemy(enemyCharacters[currentEnemyIndex]);
         dataPanelConnect.ShowDamageText(EnemyRandomDamage, playerCharacters[randomValue].transform.position);
         StartCoroutine(GetDamageTurnRed(playerCharacters[randomValue]));
         yield return new WaitForSeconds(m_animationTime);
@@ -232,6 +233,10 @@ public class GameManager : MonoBehaviour
         //Å¸°Ù Æ÷Áö¼Ç¿¡ ÀÌÆÑÆ®
     }
 
+    public void LoadSkillAniEnemy(Character enemyChar)
+    {
+        enemyChar.animator.SetTrigger("Attack");
+    }
     public void ShowEffect(int skillIndex, Character enemychar, List<GameObject> effect)//ÀÌÆÑÆ®
     {
         if(effect[skillIndex] != null)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1919862e5182c5942a9b6fb7c34a588d
+guid: e1e90fd48f7ae1c4e840a9928905b6a3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 36
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: middle enemy attack_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1
+        width: 41
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13198aff523442041a18b9b9690f6eb5
+      internalID: -61479277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: middle enemy attack_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aee9728b08e5f3439ad7e084d48b03d
+      internalID: -487798718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: middle enemy attack_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 84
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96e43ff8c1ae9341b5d18ce4b71815f
+      internalID: -1377600670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      middle enemy attack_0: -61479277
+      middle enemy attack_1: -487798718
+      middle enemy attack_2: 576071709
+      middle enemy attack_3: -1377600670
+      middle enemy attack_4: 1971037404
+      middle enemy attack_5: 1837313221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
