@@ -65,7 +65,14 @@ public class GameManager : MonoBehaviour
                 //동그란원 그거 스킬 누르고 나서 부터 마우스 올리면 뜨기
                 //만약 스킬인덱스가 전체공격, 자힐, 타힐 등등이면 스킬 인덱스에 따라 마우스 원 올릴 수 있는 애들 제한
                 //Debug.Log(dataPanelConnect.skillIndex);
-                if(dataPanelConnect.skillIndex == 6) //힐, 자힐, 방어 스킬이면
+                if(dataPanelConnect.skillIndex == 2)
+                {
+                    if (character.targetPetIndex == 0)
+                    {
+                        StartCoroutine(PlayerAttack(dataPanelConnect.skillIndex, character.targetPetIndex));
+                    }
+                }
+                else if(dataPanelConnect.skillIndex == 7 || dataPanelConnect.skillIndex == 6) //힐, 자힐, 방어 스킬이면
                 {
                     if(character.targetPetIndex != -1)
                     {
@@ -152,6 +159,7 @@ public class GameManager : MonoBehaviour
 
         //연출
         LoadSkillAniEnemy(enemyCharacters[currentEnemyIndex]);
+        DamageAni(playerCharacters[randomValue]);
         dataPanelConnect.ShowDamageText(EnemyRandomDamage, playerCharacters[randomValue].transform.position);
         StartCoroutine(GetDamageTurnRed(playerCharacters[randomValue]));
         yield return new WaitForSeconds(m_animationTime);
@@ -195,10 +203,18 @@ public class GameManager : MonoBehaviour
                 petDefaultDamage(skillIndex, i);
             }
         }
-        else if(skillIndex == 6)//단일 힐
+        else if(skillIndex == 6)
+        {
+            for (int i = 0; i < 4; i++)//매개변수 list 쓰면 list의 길이로 대체
+            {
+                petDefaultHeal(skillIndex, i);
+            }
+        }
+        else if(skillIndex == 7 || skillIndex == 2)//단일 힐, 자힐
         {
             petDefaultHeal(skillIndex, targetEnemy);
         }
+
         else
         {
             Debug.Log("구현 예정");
@@ -206,7 +222,7 @@ public class GameManager : MonoBehaviour
         //petDefaultDamage(skillIndex, targetEnemy);
     }
 
-    public void petDefaultDamage(int skillIndex, int targetEnemy)
+    public void petDefaultDamage(int skillIndex, int targetEnemy)//공격 디폴트
     {
         Debug.Assert(skillIndex>=0 && targetEnemy>=0);//항상 참이되어야 매개변수 값이 유효한지 점검
         m_damageRandomResult = DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage + 1 + slider.slideValue));//랜덤값 공격
@@ -215,7 +231,7 @@ public class GameManager : MonoBehaviour
         ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
         StartCoroutine(GetDamageTurnRed(enemyCharacters[targetEnemy]));
     }
-    public void petDefaultHeal(int skillIndex, int targetEnemy)
+    public void petDefaultHeal(int skillIndex, int targetEnemy)//치유 디폴트
     {
         m_damageRandomResult = DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage + 1 + slider.slideValue));//랜덤값 공격
         playerCharacters[targetEnemy].currentHP += m_damageRandomResult;//아군 힐
@@ -255,7 +271,7 @@ public class GameManager : MonoBehaviour
     {
         if(skillIndex!=4||skillIndex!=8)// 지금 애니메이션 나온 수
         { 
-            petchar.animator.SetTrigger("Attack"+skillIndex);//(pet)쳐야할듯 일단
+            petchar.animator.SetTrigger("Attack"+skillIndex);
             Debug.Log("animation");
         }
 
@@ -265,6 +281,10 @@ public class GameManager : MonoBehaviour
     public void LoadSkillAniEnemy(Character enemyChar)
     {
         enemyChar.animator.SetTrigger("Attack");
+    }
+    public void DamageAni(Character chara)
+    {
+        chara.animator.SetTrigger("Damage");
     }
     public void ShowEffect(int skillIndex, Character enemychar, List<GameObject> effect)//이팩트
     {
@@ -320,9 +340,10 @@ public class GameManager : MonoBehaviour
         dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
         character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
         character.targetPetIndex = -1;
-                                         //선택체크
+                     
         character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//체크 원을 원래자리로
-                                                                                              //턴
+
+        soundManager.SFXPlay(soundManager.passButton);
         currentPlayerIndex += 1; //현재 플레이어 턴 설정
         ChangeTurnText();//지금이 몇번째 turn 인지 표시
         m_enemyTurn = true;

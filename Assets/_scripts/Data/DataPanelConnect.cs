@@ -63,6 +63,8 @@ public class DataPanelConnect : MonoBehaviour
         SkillDamageText.gameObject.SetActive(true);
         skillUseMpText.gameObject.SetActive(true);
         skillUseHpText.gameObject.SetActive(true);
+
+        GameManager.Instance.soundManager.SFXPlay(GameManager.Instance.soundManager.skillButtonClick);
         skillIndex = _skillIndex + charIndex * skillCount;
         isSkillPanelDisplay = true;
         //ÄÁÆ®·Ñ
