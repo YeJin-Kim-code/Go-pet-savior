@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
     private int currentTurn = 1;
     private float m_animationTime = 2f;
     private int m_damageRandomResult;
-
+    private int m_dogShieldTurn = 0;
     private bool m_playerTurn = true;
     private bool m_enemyTurn = false;
-
+    private bool m_dogShield = false;
     void Start()
     {
         //배경음 나중에 수정
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         PlayGame();
+        DogShieldSkill();
     }
     public void PlayGame()
     {
@@ -78,7 +79,13 @@ public class GameManager : MonoBehaviour
                     {
                         StartCoroutine(PlayerAttack(dataPanelConnect.skillIndex, character.targetPetIndex));
                     }
-
+                }
+                else if(dataPanelConnect.skillIndex == 8)
+                {
+                    if (character.targetPetIndex != -1 && playerCharacters[character.targetPetIndex].deadCheck) 
+                    {
+                        StartCoroutine(PlayerAttack(dataPanelConnect.skillIndex, character.targetPetIndex));
+                    }
                 }
                 else
                 {
@@ -152,7 +159,11 @@ public class GameManager : MonoBehaviour
         {
             randomValue = Random.Range(0, 4);
         }
-        
+        if(m_dogShield == true)
+        {
+            randomValue = 3;
+            m_dogShieldTurn++;
+        }
         character.targetCheckCIrcle.transform.position = playerCharacters[randomValue].transform.position;//선택 표시하기
         EnemyRandomDamage = DamageCalculate(DB_enemySkill.GetEntity(currentEnemyIndex).lowDamage, DB_enemySkill.GetEntity(currentEnemyIndex).highDamage + 1);//데미지 랜덤값 주기
         playerCharacters[randomValue].currentHP -= EnemyRandomDamage;
@@ -214,7 +225,19 @@ public class GameManager : MonoBehaviour
         {
             petDefaultHeal(skillIndex, targetEnemy);
         }
+        else if(skillIndex == 8)//부활
+        {
+            petDefaultHeal(skillIndex, targetEnemy);
+            Renderer renderer = playerCharacters[targetEnemy].GetComponent<Renderer>();
+            renderer.material.color = Color.black;
+            playerCharacters[targetEnemy].deadCheck = false;
 
+        }
+        else if(skillIndex == 11)//대신 맞기
+        {
+            m_dogShieldTurn = 0;
+            m_dogShield = true;
+        }
         else
         {
             Debug.Log("구현 예정");
@@ -260,7 +283,14 @@ public class GameManager : MonoBehaviour
         // 모든 캐릭터가 죽었다면 true 반환
         return true;
     }
-
+    public void DogShieldSkill()//true false 로 조절한 후 4턴 동안 공격혼자받기 
+    {
+        if(m_dogShieldTurn>=4)
+        {
+            m_dogShieldTurn = 0;
+            m_dogShield = false;
+        }
+    }
     public void ChangeTurnText()//턴 text 연결
     {
         currentTurn += 1;
