@@ -104,7 +104,15 @@ public class DataPanelConnect : MonoBehaviour
     {
         // 데미지 텍스트 생성
         TextMeshProUGUI damageText = Instantiate(damageTextPrefab, canvasTransform);
-        damageText.text = "-" + damageAmount.ToString();
+        if(skillIndex == 6)//힐 예외처리
+        {
+            damageText.text = "+" + damageAmount.ToString();
+        }
+        else
+        {
+            damageText.text = "-" + damageAmount.ToString();
+        }
+
         Vector3 randomOffset = new Vector3(Random.Range(1f, 3f), Random.Range(-1f, 1f), 0f);
         damageText.transform.position = Camera.main.WorldToScreenPoint(position + randomOffset);
 

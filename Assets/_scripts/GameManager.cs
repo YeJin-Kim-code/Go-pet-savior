@@ -65,10 +65,22 @@ public class GameManager : MonoBehaviour
                 //동그란원 그거 스킬 누르고 나서 부터 마우스 올리면 뜨기
                 //만약 스킬인덱스가 전체공격, 자힐, 타힐 등등이면 스킬 인덱스에 따라 마우스 원 올릴 수 있는 애들 제한
                 //Debug.Log(dataPanelConnect.skillIndex);
-                if(character.targetEnemyIndex != -1)
+                if(dataPanelConnect.skillIndex == 6) //힐, 자힐, 방어 스킬이면
                 {
-                    StartCoroutine(PlayerAttack(dataPanelConnect.skillIndex, character.targetEnemyIndex));
+                    if(character.targetPetIndex != -1)
+                    {
+                        StartCoroutine(PlayerAttack(dataPanelConnect.skillIndex, character.targetPetIndex));
+                    }
+
                 }
+                else
+                {
+                    if(character.targetEnemyIndex != -1)
+                    {
+                        StartCoroutine(PlayerAttack(dataPanelConnect.skillIndex, character.targetEnemyIndex));
+                    }
+                }
+
             }
 
             //playerCharacters[currentPlayerIndex]
@@ -168,21 +180,30 @@ public class GameManager : MonoBehaviour
             currentEnemyIndex = 0;
         }
     }
-    public void petSkillDamage(int skillIndex, int targetEnemy)
+    public void petSkillDamage(int skillIndex,int targetEnemy)
     {
-        //if (skillIndex == 0 || skillIndex == 1 || skillIndex == 3 || skillIndex == 9 || skillIndex == 10)//스킬이 단일 공격이면
-        //{
-        //    petDefaultDamage(skillIndex, targetEnemy);
-        //}
-        //else if (skillIndex == 4 || skillIndex == 5)// 다중 공격
-        //{
-        //    Debug.Log("skillMultiAttack");
-        //}
-        //else
-        //{
-        //    Debug.Log("구현 예정");
-        //}
-        petDefaultDamage(skillIndex, targetEnemy);
+        if (skillIndex == 0 || skillIndex == 1 || skillIndex == 3 || skillIndex == 9 || skillIndex == 10)//스킬이 단일 공격이면
+        {
+            petDefaultDamage(skillIndex, targetEnemy);
+        }
+        else if (skillIndex == 4 || skillIndex == 5)// 다중 공격
+        {
+            Debug.Log("skillMultiAttack");
+            
+            for(int i =0; i<4; i++)//매개변수 list 쓰면 list의 길이로 대체
+            {
+                petDefaultDamage(skillIndex, i);
+            }
+        }
+        else if(skillIndex == 6)//단일 힐
+        {
+            petDefaultHeal(skillIndex, targetEnemy);
+        }
+        else
+        {
+            Debug.Log("구현 예정");
+        }
+        //petDefaultDamage(skillIndex, targetEnemy);
     }
 
     public void petDefaultDamage(int skillIndex, int targetEnemy)
@@ -193,6 +214,14 @@ public class GameManager : MonoBehaviour
         dataPanelConnect.ShowDamageText(m_damageRandomResult, enemyCharacters[targetEnemy].gameObject.transform.position);//데미지 텍스트 표시
         ShowEffect(skillIndex, enemyCharacters[targetEnemy], effectGameObjects);
         StartCoroutine(GetDamageTurnRed(enemyCharacters[targetEnemy]));
+    }
+    public void petDefaultHeal(int skillIndex, int targetEnemy)
+    {
+        m_damageRandomResult = DamageCalculate(DB_petsSkill.GetEntity(skillIndex).lowDamage, (DB_petsSkill.GetEntity(skillIndex).highDamage + 1 + slider.slideValue));//랜덤값 공격
+        playerCharacters[targetEnemy].currentHP += m_damageRandomResult;//아군 힐
+        dataPanelConnect.ShowDamageText(m_damageRandomResult, playerCharacters[targetEnemy].gameObject.transform.position);//데미지 텍스트 표시
+        ShowEffect(skillIndex, playerCharacters[targetEnemy], effectGameObjects);
+        //StartCoroutine(GetDamageTurnRed(playerCharacters[targetEnemy])); 파랑으로 바껴도 좋을듯
     }
     public int DamageCalculate(int smallDamage, int bigDamage)
     {
@@ -290,6 +319,7 @@ public class GameManager : MonoBehaviour
         dataPanelConnect.BeforeChooseSkill();//스킬패널 초기화
         dataPanelConnect.skillIndex = -1; //스킬인덱스 초기화
         character.targetEnemyIndex = -1; //에너미 타겟 인덱스 초기화
+        character.targetPetIndex = -1;
                                          //선택체크
         character.targetCheckCIrcle.transform.position = character.checkCircleDefaultPosition;//체크 원을 원래자리로
                                                                                               //턴
