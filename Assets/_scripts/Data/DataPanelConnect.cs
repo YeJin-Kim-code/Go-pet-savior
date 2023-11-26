@@ -106,7 +106,7 @@ public class DataPanelConnect : MonoBehaviour
     {
         // 데미지 텍스트 생성
         TextMeshProUGUI damageText = Instantiate(damageTextPrefab, canvasTransform);
-        if(skillIndex == 6)//힐 예외처리
+        if(skillIndex == 6||skillIndex==7||skillIndex==8||skillIndex==2||(GameManager.Instance.currentEnemyIndex==3&&GameManager.Instance.currentPlayerIndex!=3))//힐 예외처리
         {
             damageText.text = "+" + damageAmount.ToString();
         }

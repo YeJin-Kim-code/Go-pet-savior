@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip passButton;//패스 버튼
     public AudioClip clickTarget;//플레이어가 타겟 누를때
     public AudioClip damage;//공격 받을때
+    public AudioClip clearMusic;
+
     //public AudioSource backAudio;
     //스킬
     public List<AudioClip> petSkillSound;
@@ -32,7 +34,7 @@ public class SoundManager : MonoBehaviour
             audiosource.clip = clip;
             audiosource.Play();
 
-            Destroy(soundObject, 2f);
+            Destroy(soundObject, 3f);
         }
 
     }
@@ -43,7 +45,7 @@ public class SoundManager : MonoBehaviour
         AudioSource backAudio = soundObject.AddComponent<AudioSource>();
         backAudio.clip = clip;
         backAudio.loop = true;
-        backAudio.volume = 1.0f;
+        backAudio.volume = 0.6f;
         backAudio.Play();
 
     }

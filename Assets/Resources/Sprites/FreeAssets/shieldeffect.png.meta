@@ -1,0 +1,2347 @@
+fileFormatVersion: 2
+guid: 1ba945fd5012cad42ba8a709f02ee418
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shieldeffect_9
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 363
+        width: 107
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7edfc4ee8c5388438533871f7704545
+      internalID: -1253040518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 387
+        width: 45
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3dec811ad94cc347b6a92c04c0b1c0b
+      internalID: 22548091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_7
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 374
+        width: 93
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55a241365a428a4f9077983d4bf40dd
+      internalID: -1588935697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 384
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdad03af0c2f4314d806dcb96fb87cd6
+      internalID: -577585461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_6
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 378
+        width: 91
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b68cac27030dfb448ea15e5554e45ca
+      internalID: -1232494698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_8
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 367
+        width: 103
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54300b9795414cb4d9a633cd3c4fe878
+      internalID: -287630366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_18
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 235
+        width: 103
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9cd8a9d01c75f4c831d683381cea63
+      internalID: 685712454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_19
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 192
+        width: 121
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e49ee6b3ab58b24bb62bcc5d522da95
+      internalID: -1441122764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_20
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 281
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0501f09949f23b240951ed45d3d5c35b
+      internalID: 474978537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_21
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 298
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18815a8cf68c66478b1f6d0ee10714b
+      internalID: 493796741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_22
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 301
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba74423bf6e27794fa227450e664f593
+      internalID: 1673874381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_23
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 282
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750aa381d759a3849ada878ac26402a1
+      internalID: -715507353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_24
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 298
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6a787c4f1289c49a29fc1d9af6f5c8
+      internalID: 1726243974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_25
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 294
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b595c48c61d8c4db60cb69027f5d2a
+      internalID: -41657568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_26
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 260
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f84ab8cabd6fa43ba9e3151d345642
+      internalID: -858841595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_27
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 256
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871c779a84ce67e4fa975c186dc28d1e
+      internalID: 1811398373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_28
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 294
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263b9e7c37e60a44aba19d691797cc51
+      internalID: 1697943154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_29
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 209
+        width: 104
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229c9e96ee909f94d86e69ad0e395de6
+      internalID: 1330444373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_30
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 283
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cc3608f1926a44293b624044d0f3c1
+      internalID: -650392166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_31
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 207
+        width: 53
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd66f07f1e36ef4386f42df3a8975fa
+      internalID: -1858126124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_32
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 262
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899fdb1dd748f2f468ccc49f5dc9064b
+      internalID: 802697998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_33
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 281
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef16abbb1a755d47815c73d94efc689
+      internalID: 427841318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_34
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 276
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e961013a906ec96429d4fa8d86619470
+      internalID: 1804948341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_35
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 241
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3235442e972070b419a8a28a97644d37
+      internalID: 1147262642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_36
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 273
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9905bf6c81969be438b863428185b098
+      internalID: 280947562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_37
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 255
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d94d93d292dd0478dc6814a015f138
+      internalID: 480567136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_38
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 274
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08457aae324d2754eb54af5d308921c4
+      internalID: -1990455642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_39
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 252
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c119af247799b7e4494d24b767361145
+      internalID: -2136703687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_40
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 261
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607c5430395418346a79df71d46b6d32
+      internalID: 1525498462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_41
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 238
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24cab0623ad51f459f5c3f6a90ef450
+      internalID: 1755064029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_42
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 240
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12b7b56cec93ae46a2877f4939f669c
+      internalID: 53582029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_43
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 256
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c634c5ed86299b4eb1be107c74365db
+      internalID: 288666576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_44
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 244
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e34819c57f7b1345940835cdeb82d16
+      internalID: -1049400214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_45
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 245
+        width: 30
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3673c963eb315674fb7485c749e2c574
+      internalID: -1374418810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_46
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 244
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73646c3db0748894bbea880fd79ed828
+      internalID: 778412866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_47
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 218
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c187805d5b325d48bc778c292b13b69
+      internalID: 2054015211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_48
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 180
+        width: 109
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f64950416e5c094f84532982ab67c8a
+      internalID: -1656730657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_49
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 217
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56ad4b6288498540afe5fb7f3eed755
+      internalID: 2063691116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_50
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 246
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870b5ca4046c55b49b94e2cdc5e49da2
+      internalID: -413607407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_51
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 187
+        width: 80
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae3b3726a81f704087e68613bf7a2a3
+      internalID: 403951385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_52
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 225
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c15c1c671f82e4f86f3a7473e13441
+      internalID: 418897587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_53
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 223
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7843989f9078d5445bbca0edbe08d5e1
+      internalID: 124620920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_54
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 224
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d122bcbcbbd144ea22e7f781a078d4
+      internalID: -1441586875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_55
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 186
+        width: 116
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ace2bbd1eec8945832f65d0e134c9c
+      internalID: 762825486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_56
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 236
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccb87d4ddc583b4b981221dd2958344
+      internalID: -765233741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_57
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 202
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99474643d544d74dac97b890609c5c1
+      internalID: -2129296666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_58
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 223
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e145c50f97861419affac6d854707b
+      internalID: -1609844177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_59
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 223
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e5f3ab04d1e9b4894db538ceb8d264
+      internalID: -575945672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_60
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 216
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fcb742f1e6f7048a250b5688d3d7ca
+      internalID: -140545181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_61
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 211
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3261ea787ec8ea40acddaac61bc5e3c
+      internalID: 812363391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_62
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 197
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc5dd30bc82d544e9ad0654081b5b2c
+      internalID: 504112269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_63
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 196
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549a80efbd53e4b469446e7f4ad9561c
+      internalID: -1451263472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_64
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 207
+        width: 36
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313d6254d3eefdd4786f79a561ffd14f
+      internalID: -2127517161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_65
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 210
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a9fe262f4939345958fbee166144f9
+      internalID: 2125170588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_66
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 197
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998287d09f12c6044a4efd6ed9b67bf6
+      internalID: 976195221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_67
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 194
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ccd10bf3618794bbdd26f70c9f862f
+      internalID: -1167178571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_68
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 189
+        width: 57
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf6dce9a2f154140941a400c5d323a5
+      internalID: 612075856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_69
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 184
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7195c7a6a0c70e649838ed1e1c35b934
+      internalID: 790793749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_70
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 118
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3108d5cfd51ceaa4bb9b2c8e878b59d7
+      internalID: 810387773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_71
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 95
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f457fe1a68f82114186b3ab7fdcb9325
+      internalID: -1144319841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_72
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 132
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89831acd2883484e974c9c04c82c195
+      internalID: -155930992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_73
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 125
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a5e57886a981f47ba491dc913c860a
+      internalID: 1148064398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_74
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 134
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ed3b3a2be81654faed1e9a6cc5d352
+      internalID: -1550832640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_75
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 107
+        width: 63
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe96a822662be994bb626c65ef8ac054
+      internalID: 938550540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_76
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 112
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b437c9fa048c8c841946756f43c1f609
+      internalID: -1410643042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_77
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 121
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a163bf7b857db4abf108bc77672147
+      internalID: 1446500035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_78
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 110
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14f94d1b5dd09b40af3933c6f692e4c
+      internalID: -1623326169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_79
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 122
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c10b67a74945545b1dcd527695cca7
+      internalID: -715580466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_80
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 120
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9638e1ba2500758438fa88d05af20e8c
+      internalID: -1105802147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_81
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 123
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df0be9f3b0e2334982dde9798c6af1c
+      internalID: 1414433242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_82
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 63
+        width: 53
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091d62254d58c184693d4ee8caff8ce2
+      internalID: 1622249750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_83
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 87
+        width: 66
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c40b9a392b4a0345824034156073f05
+      internalID: 1741289485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_84
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 115
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c05ef73e8e66ce4594451dd976550ff
+      internalID: -1559018754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_85
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 115
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759e4c6ae958ffa4887d6d29d64c43e1
+      internalID: 1902836296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_86
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 92
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd0d7f257134a448a4dce835f02a2a2
+      internalID: 1579510124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_87
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 71
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b40da5612add24691d51f0bcef2975
+      internalID: 92872527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_88
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 93
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49825d06668e5114cb92f4cf2efdb97d
+      internalID: -985452820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_89
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 63
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a850654e106a4d04da9fe1290cbdd5f5
+      internalID: 1601535042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_90
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 94
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bac30e9a1db15149a13cc7dd4219a12
+      internalID: 1338063465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_91
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 104
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc82e63df3cb6a4ebf2d81b040305cb
+      internalID: 749027470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_92
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 92
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f96db6c00d263409703933152fb58b
+      internalID: 753199265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_93
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 86
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d180d0d3c48ba694f98a5189910e741f
+      internalID: -25693361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_94
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 80
+        width: 60
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec67d603cc0511f46af7d2e635d43684
+      internalID: 1867705239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_95
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 62
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aafaccd5a01b7b4a894e25f7b42bf54
+      internalID: -187238319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_96
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 94
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda41d9c5a44fa74fae587163ce88051
+      internalID: 447518458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_97
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 79
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbebe54878d8ad34981eb8e4a262cf4e
+      internalID: 802783223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_98
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 83
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fec0e4bae9fb34e8873f8a15ed1280
+      internalID: 234304119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_99
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 73
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3bef46286a10e42b665c8e7335fd1d
+      internalID: 1016821729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_100
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0d9416c4b7ced419d754838e87683d
+      internalID: -1679432705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_101
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 84
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1804d6909c1291479f740d8d09d219c
+      internalID: 274385405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_102
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 45
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff50309dd157ed42837c68e3b86e0cd
+      internalID: 533762214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_103
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 78
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc1a0d2a3593a543afb0dab57d7e6a4
+      internalID: 655445594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_104
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 74
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9dc4d6dfbb19b429f348cbed1910aa
+      internalID: -1753463363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_105
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 58
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387b9b9e1816f4a4aa89501128bc478b
+      internalID: 122255478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_106
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 68
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7fd84dc62c65345ad0dc93feb91f88
+      internalID: 761390710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_107
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 44
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fee9c258e3d3d4183c36db5522258a
+      internalID: 1505005271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_108
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 68
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a48ccfb0ba169d4daa6c423cc4a6359
+      internalID: 1352876560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_109
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 57
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02315f364bb090d41bf558a1e9bfd467
+      internalID: 688129583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_110
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 56
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21be5b37aa0c8749884d8f3073755a9
+      internalID: -923521239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shieldeffect_111
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 67
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19f3c8bf5c8f8943bdd140cb8780f79
+      internalID: -303779940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      shieldeffect_0: -833429546
+      shieldeffect_100: -1679432705
+      shieldeffect_101: 274385405
+      shieldeffect_102: 533762214
+      shieldeffect_103: 655445594
+      shieldeffect_104: -1753463363
+      shieldeffect_105: 122255478
+      shieldeffect_106: 761390710
+      shieldeffect_107: 1505005271
+      shieldeffect_108: 1352876560
+      shieldeffect_109: 688129583
+      shieldeffect_11: -893659161
+      shieldeffect_110: -923521239
+      shieldeffect_111: -303779940
+      shieldeffect_13: 1119075726
+      shieldeffect_14: 49816024
+      shieldeffect_16: -1878606715
+      shieldeffect_18: 685712454
+      shieldeffect_19: -1441122764
+      shieldeffect_2: -1479521376
+      shieldeffect_20: 474978537
+      shieldeffect_21: 493796741
+      shieldeffect_22: 1673874381
+      shieldeffect_23: -715507353
+      shieldeffect_24: 1726243974
+      shieldeffect_25: -41657568
+      shieldeffect_26: -858841595
+      shieldeffect_27: 1811398373
+      shieldeffect_28: 1697943154
+      shieldeffect_29: 1330444373
+      shieldeffect_3: -473134200
+      shieldeffect_30: -650392166
+      shieldeffect_31: -1858126124
+      shieldeffect_32: 802697998
+      shieldeffect_33: 427841318
+      shieldeffect_34: 1804948341
+      shieldeffect_35: 1147262642
+      shieldeffect_36: 280947562
+      shieldeffect_37: 480567136
+      shieldeffect_38: -1990455642
+      shieldeffect_39: -2136703687
+      shieldeffect_4: 22548091
+      shieldeffect_40: 1525498462
+      shieldeffect_41: 1755064029
+      shieldeffect_42: 53582029
+      shieldeffect_43: 288666576
+      shieldeffect_44: -1049400214
+      shieldeffect_45: -1374418810
+      shieldeffect_46: 778412866
+      shieldeffect_47: 2054015211
+      shieldeffect_48: -1656730657
+      shieldeffect_49: 2063691116
+      shieldeffect_5: -577585461
+      shieldeffect_50: -413607407
+      shieldeffect_51: 403951385
+      shieldeffect_52: 418897587
+      shieldeffect_53: 124620920
+      shieldeffect_54: -1441586875
+      shieldeffect_55: 762825486
+      shieldeffect_56: -765233741
+      shieldeffect_57: -2129296666
+      shieldeffect_58: -1609844177
+      shieldeffect_59: -575945672
+      shieldeffect_6: -1232494698
+      shieldeffect_60: -140545181
+      shieldeffect_61: 812363391
+      shieldeffect_62: 504112269
+      shieldeffect_63: -1451263472
+      shieldeffect_64: -2127517161
+      shieldeffect_65: 2125170588
+      shieldeffect_66: 976195221
+      shieldeffect_67: -1167178571
+      shieldeffect_68: 612075856
+      shieldeffect_69: 790793749
+      shieldeffect_7: -1588935697
+      shieldeffect_70: 810387773
+      shieldeffect_71: -1144319841
+      shieldeffect_72: -155930992
+      shieldeffect_73: 1148064398
+      shieldeffect_74: -1550832640
+      shieldeffect_75: 938550540
+      shieldeffect_76: -1410643042
+      shieldeffect_77: 1446500035
+      shieldeffect_78: -1623326169
+      shieldeffect_79: -715580466
+      shieldeffect_8: -287630366
+      shieldeffect_80: -1105802147
+      shieldeffect_81: 1414433242
+      shieldeffect_82: 1622249750
+      shieldeffect_83: 1741289485
+      shieldeffect_84: -1559018754
+      shieldeffect_85: 1902836296
+      shieldeffect_86: 1579510124
+      shieldeffect_87: 92872527
+      shieldeffect_88: -985452820
+      shieldeffect_89: 1601535042
+      shieldeffect_9: -1253040518
+      shieldeffect_90: 1338063465
+      shieldeffect_91: 749027470
+      shieldeffect_92: 753199265
+      shieldeffect_93: -25693361
+      shieldeffect_94: 1867705239
+      shieldeffect_95: -187238319
+      shieldeffect_96: 447518458
+      shieldeffect_97: 802783223
+      shieldeffect_98: 234304119
+      shieldeffect_99: 1016821729
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

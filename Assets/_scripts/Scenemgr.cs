@@ -12,5 +12,7 @@ public class Scenemgr : MonoBehaviour
     public void LoadStageScene()
     {
         SceneManager.LoadScene("StageScene");
+        Debug.Log("stagescene");
     }
+
 }
